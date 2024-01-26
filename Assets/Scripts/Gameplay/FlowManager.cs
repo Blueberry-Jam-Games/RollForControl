@@ -31,6 +31,8 @@ public class FlowManager : MonoBehaviour
     //[HideInInspector]
     public List<PigeonDiscussion> pigeonMessage;
 
+    public Dictionary<string, bool> inventory = new Dictionary<string, bool>();
+
     private void Awake()
     {
         if (_instance == null)

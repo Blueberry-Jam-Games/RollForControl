@@ -1547,7 +1547,7 @@ PrefabInstance:
     - target: {fileID: 1431932313302297098, guid: e55fcd10a5bc9d9419edff3c5b7aa581,
         type: 3}
       propertyPath: lootBoxMessage.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1431932313302297098, guid: e55fcd10a5bc9d9419edff3c5b7aa581,
         type: 3}
@@ -1959,6 +1959,8 @@ MonoBehaviour:
   rewardedItem: {fileID: 1583346070}
   lootboxQty: {fileID: 845798612}
   lootboxType: {fileID: 831641440}
+  fManager: {fileID: 0}
+  waifuLootbox: {fileID: 11400000, guid: 2cee00050b17a90479a3e02172f62164, type: 2}
 --- !u!4 &1810560554
 Transform:
   m_ObjectHideFlags: 0

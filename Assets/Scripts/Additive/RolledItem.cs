@@ -45,4 +45,9 @@ public class RolledItem : MonoBehaviour
         yield return new WaitForSeconds(Durration);
         gameObject.SetActive(false);
     }
+
+    public string GetName()
+    {
+        return ownItem.name;
+    }
 }

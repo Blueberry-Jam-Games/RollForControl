@@ -1,8 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using Random=UnityEngine.Random;
+
 
 public class GachaManager : MonoBehaviour
 {
@@ -15,11 +19,16 @@ public class GachaManager : MonoBehaviour
 
     public TextMeshPro lootboxType;
 
+    public FlowManager fManager;
+
+    public LootBoxRoll waifuLootbox;
+
     private void Start()
     {
         // LootBoxRoll lbr = FlowManager.Instance.lootBoxMessage;
         // LootBoxItem foundItem = RolledItem(lbr);
 
+        fManager = FindObjectOfType<FlowManager>();
         rewardedItem.gameObject.SetActive(false);
         List<LootBoxRoll> rolls = FlowManager.Instance.lootBoxMessage;
         StartCoroutine(PullLootBoxes(rolls));
@@ -32,15 +41,15 @@ public class GachaManager : MonoBehaviour
         lootboxQty.text = System.Convert.ToString(rolls.Count);
         
         //Loop for multiple lootboxes
-        for (int i = 0, count = rolls.Count; i < count; i++)
+        for (int i = 0; i < rolls.Count; i++)
         {
             lootboxType.text = rolls[i].LootBoxName;
             //Start of animation for lootboxes
-            yield return DoRoll(rolls[i], count - i);
+            yield return DoRoll(rolls[i], rolls.Count - i, rolls);
         }
     }
 
-    private IEnumerator DoRoll(LootBoxRoll roll, int remainingLootboxes)
+    private IEnumerator DoRoll(LootBoxRoll roll, int remainingLootboxes, List<LootBoxRoll> rolls)
     {
         rewardedItem.Reset();
         lootBoxAnimation.Rebind();
@@ -83,6 +92,7 @@ public class GachaManager : MonoBehaviour
 
         lootBoxAnimation.Play("LootBoxSpin");
 
+        //Calculate won item
         LootBoxItem reward = RolledItem(roll);
         rewardedItem.Initialize(reward);
 
@@ -94,6 +104,17 @@ public class GachaManager : MonoBehaviour
 
         yield return new WaitForSeconds(rewardedItem.Durration);
 
+        if(rewardedItem.GetName() == "Waifu Lootbox")
+        {
+            rolls.Add(waifuLootbox);
+            lootboxQty.text = System.Convert.ToString(remainingLootboxes);
+        }
+        else
+        {
+            AddToInventory(rewardedItem.GetName());
+            Debug.Log("Added Item \n" + rewardedItem.GetName() + "  " + fManager.inventory[rewardedItem.GetName()]);
+        }
+
         while (!Input.GetKeyDown(KeyCode.Return))
         {
             yield return null;
@@ -102,8 +123,21 @@ public class GachaManager : MonoBehaviour
         {
             yield return null;
         }
+    }
 
-        // TODO idk what else?
+    private void AddToInventory(string name)
+    {
+        if(fManager.inventory.ContainsKey(name))
+        {
+            if(fManager.inventory[name] == false)
+            {
+                fManager.inventory.Add(name, true);
+            }
+        }
+        else
+        {
+            fManager.inventory.Add(name, true);
+        }
     }
 
     private LootBoxItem RolledItem(LootBoxRoll lbr)
