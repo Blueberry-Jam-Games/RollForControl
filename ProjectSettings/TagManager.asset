@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FlowControl
   - SoundManager
+  - EnemyBasic
   layers:
   - Default
   - TransparentFX

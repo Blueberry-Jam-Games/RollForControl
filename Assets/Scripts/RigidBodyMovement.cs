@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class RigidBodyMovement : MonoBehaviour
 {
-    public float moveSpeed = 25f;
-
-    void Update()
+    protected Rigidbody rb;
+    public float speed = 5f;
+    Vector3 movement;
+    // Start is called before the first frame update
+    void Start()
     {
-        // Get input for movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        rb = GetComponent<Rigidbody>();
+    }
 
-        // Calculate movement direction
-        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+    private void Update()
+    {
+        movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speed;
+    }
 
-        // Move the Rigidbody
-        GetComponent<Rigidbody>().MovePosition(transform.position + movement * moveSpeed * Time.deltaTime);
+    private void FixedUpdate()
+    {
+        rb.velocity = movement;
     }
 }
