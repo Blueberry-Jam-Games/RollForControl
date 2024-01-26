@@ -28,7 +28,7 @@ public class FlowManager : MonoBehaviour
     [HideInInspector]
     public List<LootBoxRoll> lootBoxMessage;
 
-    [HideInInspector]
+    //[HideInInspector]
     public List<PigeonDiscussion> pigeonMessage;
 
     private void Awake()
@@ -123,6 +123,18 @@ public class FlowManager : MonoBehaviour
     private void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
+    }
+
+    // Added due to pigeon manager to fade to black and reset
+    // it will take 1 second to do that, you deal with it.
+    public void RequestFadeToBlack()
+    {
+        levelAnimator.Play("FadeToBlack");
+    }
+
+    public void RequestVisable()
+    {
+        levelAnimator.Play("Idle");
     }
 }
 
