@@ -6,4 +6,14 @@ using UnityEngine;
 public class PigeonDiscussion : ScriptableObject
 {
     public string message;
+    public float messageTime;
+    public List<PigeonReply> replies;
+}
+
+[System.Serializable]
+public class PigeonReply
+{
+    public Sprite icon;
+    public string message;
+    public float replyTime;
 }
