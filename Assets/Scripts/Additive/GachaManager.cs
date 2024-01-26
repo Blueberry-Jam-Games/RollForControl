@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,6 +11,9 @@ public class GachaManager : MonoBehaviour
     public float lootBoxAnimationTime;
     public RolledItem rewardedItem;
 
+    public TextMeshPro lootboxQty;
+
+    public TextMeshPro lootboxType;
 
     private void Start()
     {
@@ -25,14 +29,22 @@ public class GachaManager : MonoBehaviour
     {
         yield return null;
 
+        lootboxQty.text = System.Convert.ToString(rolls.Count);
+        
+        //Loop for multiple lootboxes
         for (int i = 0, count = rolls.Count; i < count; i++)
         {
-            yield return DoRoll(rolls[i]);
+            lootboxType.text = rolls[i].LootBoxName;
+            //Start of animation for lootboxes
+            yield return DoRoll(rolls[i], count - i);
         }
     }
 
-    private IEnumerator DoRoll(LootBoxRoll roll)
+    private IEnumerator DoRoll(LootBoxRoll roll, int remainingLootboxes)
     {
+        rewardedItem.Reset();
+        lootBoxAnimation.Rebind();
+        lootBoxAnimation.Update(0);
         int rollables = roll.rolls.Count;
         // initialize
         for (int i = 0; i < gachaItemPool.Count; i++)
@@ -41,12 +53,22 @@ public class GachaManager : MonoBehaviour
             {
                 gachaItemPool[i].gameObject.SetActive(true);
                 gachaItemPool[i].Initialize(roll.rolls[i]);
+                gachaItemPool[i].Reset();
             }
             else
             {
                 gachaItemPool[i].gameObject.SetActive(false);
             }
         }
+
+        //yield return new WaitForSeconds(1);
+
+        while (!Input.GetKeyDown(KeyCode.Return))
+        {
+            yield return null;
+        }
+
+        lootboxQty.text = System.Convert.ToString(remainingLootboxes - 1);
 
         // play animations
         for (int i = 0; i < gachaItemPool.Count; i++)
@@ -68,8 +90,18 @@ public class GachaManager : MonoBehaviour
 
         rewardedItem.gameObject.SetActive(true);
         rewardedItem.Play(false);
+        rewardedItem.displayObject.sprite = reward.image;
 
         yield return new WaitForSeconds(rewardedItem.Durration);
+
+        while (!Input.GetKeyDown(KeyCode.Return))
+        {
+            yield return null;
+        }
+        while (Input.GetKeyDown(KeyCode.Return))
+        {
+            yield return null;
+        }
 
         // TODO idk what else?
     }
