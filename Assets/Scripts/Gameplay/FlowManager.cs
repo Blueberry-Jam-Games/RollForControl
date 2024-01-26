@@ -8,6 +8,11 @@ public class FlowManager : MonoBehaviour
     private static FlowManager _instance;
     public static FlowManager Instance { get => _instance; }
 
+    [Header("Gameplay Config")]
+    public List<LevelAction> gameFlow;
+    public int currentLevel = 0;
+
+    [Header("Prefab Config")]
     [SerializeField]
     private string gachalevel;
 
@@ -21,10 +26,10 @@ public class FlowManager : MonoBehaviour
 
     // Used to communicate data from 1 scene to the next, if you get to gacha or pigeon just assume it exists and keep going
     [HideInInspector]
-    public LootBoxRoll lootBoxMessage;
+    public List<LootBoxRoll> lootBoxMessage;
 
     [HideInInspector]
-    public PigeonDiscussion pigeonMessage;
+    public List<PigeonDiscussion> pigeonMessage;
 
     private void Awake()
     {
@@ -42,28 +47,60 @@ public class FlowManager : MonoBehaviour
     private void Start()
     {
         SceneManager.sceneLoaded += SceneLoaded;
+        currentLevel = -1;
     }
 
     public void TitleScreenEnter()
     {
-        LootBoxRoll lbr = new LootBoxRoll();
-        lbr.rolls = new List<LootBoxItem>();
-        GoToGacha(lbr);
+        // LootBoxRoll lbr = new LootBoxRoll();
+        // lbr.rolls = new List<LootBoxItem>();
+        // GoToGacha(lbr);
+        HandleNextGameFlow();
     }
 
-    public void GoToGacha(LootBoxRoll lootBox)
+    protected void HandleNextGameFlow()
     {
-        this.lootBoxMessage = lootBox;
+        currentLevel++;
+        LevelAction next = gameFlow[currentLevel];
+
+        if (next.actionType == ActionType.CRASH)
+        {
+            Debug.LogError($"Recieved a crash instruction on action {currentLevel}, have you tried configuring your stuff properly.");
+            return;
+        }
+        else if (next.actionType == ActionType.GAMEPLAY)
+        {
+            GoToGameplay(next.gameplayLevel);
+        }
+        else if (next.actionType == ActionType.GACHA)
+        {
+            // Somehow run each of the gacha rolls.
+        }
+        else if (next.actionType == ActionType.PIGEON)
+        {
+            // Somehow run each pigeon discussion.
+        }
+    }
+
+    protected void GoToGacha(LootBoxRoll lootBox)
+    {
+        this.lootBoxMessage = new List<LootBoxRoll>
+        {
+            lootBox
+        };
         StartCoroutine(LoadLevel(gachalevel));
     }
 
-    public void GoToPigeon(PigeonDiscussion pigeonDiscussion)
+    protected void GoToPigeon(PigeonDiscussion pigeonDiscussion)
     {
-        this.pigeonMessage = pigeonDiscussion;
+        this.pigeonMessage = new List<PigeonDiscussion>
+        {
+            pigeonDiscussion
+        };
         StartCoroutine(LoadLevel(pigeonlevel));
     }
 
-    public void GoToGameplay(int level)
+    protected void GoToGameplay(string level)
     {
         // TODO
     }
@@ -87,4 +124,28 @@ public class FlowManager : MonoBehaviour
     {
 
     }
+}
+
+[System.Serializable]
+public class LevelAction
+{
+    public ActionType actionType;
+
+    /**Only used if it is a gameplay section*/
+    [Header("Gameplay Configuration")]
+    public string gameplayLevel;
+
+    [Header("GACHA Configuration")]
+    public List<LootBoxRoll> lootBoxRoll;
+
+    [Header("Pigeon Configuration")]
+    public List<PigeonDiscussion> pigeonDiscussion;
+}
+
+public enum ActionType
+{
+    CRASH,
+    GAMEPLAY,
+    GACHA,
+    PIGEON,
 }

@@ -6,7 +6,7 @@ public class PigeonManager : MonoBehaviour
 {
     void Start()
     {
-        PigeonDiscussion pd = FlowManager.Instance.pigeonMessage;
+        // PigeonDiscussion pd = FlowManager.Instance.pigeonMessage;
         // Do what you need   
     }
 
