@@ -19,7 +19,9 @@ public class GachaManager : MonoBehaviour
 
     public TextMeshPro lootboxType;
 
-    public FlowManager fManager;
+    private FlowManager fManager;
+
+    public TextMeshPro lootBoxItemDisplayName;
 
     public LootBoxRoll waifuLootbox;
 
@@ -30,6 +32,7 @@ public class GachaManager : MonoBehaviour
 
         fManager = FindObjectOfType<FlowManager>();
         rewardedItem.gameObject.SetActive(false);
+        lootBoxItemDisplayName.gameObject.SetActive(false);
         List<LootBoxRoll> rolls = FlowManager.Instance.lootBoxMessage;
         StartCoroutine(PullLootBoxes(rolls));
     }
@@ -52,6 +55,7 @@ public class GachaManager : MonoBehaviour
     private IEnumerator DoRoll(LootBoxRoll roll, int remainingLootboxes, List<LootBoxRoll> rolls)
     {
         rewardedItem.Reset();
+        lootBoxItemDisplayName.gameObject.SetActive(false);
         lootBoxAnimation.Rebind();
         lootBoxAnimation.Update(0);
         int rollables = roll.rolls.Count;
@@ -103,6 +107,9 @@ public class GachaManager : MonoBehaviour
         rewardedItem.displayObject.sprite = reward.image;
 
         yield return new WaitForSeconds(rewardedItem.Durration);
+
+        lootBoxItemDisplayName.gameObject.SetActive(true);
+        lootBoxItemDisplayName.text = rewardedItem.GetName();
 
         if(rewardedItem.GetName() == "Waifu Lootbox")
         {
