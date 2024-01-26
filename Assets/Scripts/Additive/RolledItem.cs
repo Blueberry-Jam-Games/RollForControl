@@ -12,6 +12,8 @@ public class RolledItem : MonoBehaviour
 
     private LootBoxItem ownItem;
 
+    public SpriteRenderer displayObject;
+
     public float Durration
     {
         get => splineAnimation.Duration;
@@ -20,6 +22,7 @@ public class RolledItem : MonoBehaviour
     public void Initialize(LootBoxItem self)
     {
         this.ownItem = self;
+        displayObject.sprite = self.image;
         // TODO something about the sprite
     }
 
@@ -30,6 +33,11 @@ public class RolledItem : MonoBehaviour
         {
             StartCoroutine(OnComplete());
         }
+    }
+
+    public void Reset()
+    {
+        splineAnimation.Restart(false);
     }
 
     private IEnumerator OnComplete()

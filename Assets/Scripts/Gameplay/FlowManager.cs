@@ -25,7 +25,7 @@ public class FlowManager : MonoBehaviour
     private Animator levelAnimator;
 
     // Used to communicate data from 1 scene to the next, if you get to gacha or pigeon just assume it exists and keep going
-    [HideInInspector]
+    //[HideInInspector]
     public List<LootBoxRoll> lootBoxMessage;
 
     //[HideInInspector]

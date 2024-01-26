@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ddbf485488adc47bd5c7e704e269f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animation: {fileID: 1422570957289658216}
+  splineAnimation: {fileID: 1422570957289658216}
 --- !u!1 &7106575951814492309
 GameObject:
   m_ObjectHideFlags: 0
