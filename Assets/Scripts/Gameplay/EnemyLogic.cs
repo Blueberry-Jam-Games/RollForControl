@@ -7,17 +7,20 @@ public class EnemyLogic : MonoBehaviour
     private int hp = 3;
     private bool started = false;
     public float speed = 1f;
+    public bool passedOnce = false;
+
+    private GameObject waifu;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        waifu = GameObject.FindGameObjectWithTag("Waifu");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!started && Input.GetButtonDown("Fire1"))
+        if (!started && transform.position.x - waifu.transform.position.x < 17)
         {
             started = true;
         }
@@ -25,15 +28,36 @@ public class EnemyLogic : MonoBehaviour
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
+        if (!passedOnce && transform.position.x - waifu.transform.position.x < 0)
+        {
+            passedOnce = true;
+            RigidBodyMovement pc = waifu.GetComponent<RigidBodyMovement>();
+            pc.TakeDamage();
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         // If you want to despawn on collision with another object, you can handle it here
-        hp--;
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            hp--;
+        }
         if (hp <= 0)
         {
             Destroy(gameObject);
+            LootboxDrop();
         }
+    }
+
+    void LootboxDrop()
+    {
+
+    }
+
+
+    void AnimateThis()
+    {
+
     }
 }
