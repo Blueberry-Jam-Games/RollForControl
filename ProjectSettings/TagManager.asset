@@ -7,6 +7,9 @@ TagManager:
   - FlowControl
   - SoundManager
   - EnemyBasic
+  - PlayerBullet
+  - EnemyBullet
+  - Waifu
   layers:
   - Default
   - TransparentFX

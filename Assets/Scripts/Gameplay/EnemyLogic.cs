@@ -8,16 +8,18 @@ public class EnemyLogic : MonoBehaviour
     private bool started = false;
     public float speed = 1f;
 
+    private GameObject waifu;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        waifu = GameObject.FindGameObjectWithTag("Waifu");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!started && Input.GetButtonDown("Fire1"))
+        if (!started && transform.position.x - waifu.transform.position.x < 17)
         {
             started = true;
         }
@@ -30,10 +32,19 @@ public class EnemyLogic : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // If you want to despawn on collision with another object, you can handle it here
-        hp--;
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            hp--;
+        }
         if (hp <= 0)
         {
             Destroy(gameObject);
+            LootboxDrop();
         }
     }
-}
+
+    void LootboxDrop()
+    {
+
+    }
+}w
