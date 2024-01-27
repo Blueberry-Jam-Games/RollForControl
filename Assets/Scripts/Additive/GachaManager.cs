@@ -46,14 +46,14 @@ public class GachaManager : MonoBehaviour
         {
             lootboxType.text = rolls[i].LootBoxName;
             //Start of animation for lootboxes
-            yield return DoRoll(rolls[i], rolls.Count - i, rolls);
+            yield return DoRoll(rolls[i], rolls.Count - i, rolls, i == 0);
         }
 
         // end
         FlowManager.Instance.AddativeSceneDone();
     }
 
-    private IEnumerator DoRoll(LootBoxRoll roll, int remainingLootboxes, List<LootBoxRoll> rolls)
+    private IEnumerator DoRoll(LootBoxRoll roll, int remainingLootboxes, List<LootBoxRoll> rolls, bool requireInput)
     {
         rewardedItem.Reset();
         lootBoxItemDisplayName.gameObject.SetActive(false);
@@ -75,9 +75,7 @@ public class GachaManager : MonoBehaviour
             }
         }
 
-        //yield return new WaitForSeconds(1);
-
-        while (!Input.GetKeyDown(KeyCode.Return))
+        while (requireInput && !Input.GetKeyDown(KeyCode.Return))
         {
             yield return null;
         }
@@ -123,12 +121,10 @@ public class GachaManager : MonoBehaviour
             Debug.Log("Added Item \n" + rewardedItem.GetName() + "  " + fManager.inventory[rewardedItem.GetName()]);
         }
 
+        Debug.Log("Showing reward");
         while (!Input.GetKeyDown(KeyCode.Return))
         {
-            yield return null;
-        }
-        while (Input.GetKeyDown(KeyCode.Return))
-        {
+            Debug.Log("Waiting for input");
             yield return null;
         }
     }
