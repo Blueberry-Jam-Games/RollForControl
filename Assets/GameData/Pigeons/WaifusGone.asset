@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2d7c603b1f34e40ae6ff5bba583c9c, type: 3}
   m_Name: WaifusGone
   m_EditorClassIdentifier: 
-  message: "Dear ___ community,\r\nTo increase character diversity, we have decided
-    to limit player access through optional purchases. All currently obtained characters
-    will be released. Players will be rewarded with two free lootboxes as compensation.
-    \r\nHappy gaming!\r"
+  message: "Dear Cosmic Collision community,\r\nTo increase character diversity,
+    we have decided to limit player access through optional purchases. All currently
+    obtained characters will be released. Players will be rewarded with two free
+    lootboxes as compensation. \r\nHappy gaming!\r"
   messageTime: 3
   replies:
+  - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    message: Harmony games is holding my wife hostage
+    replyTime: 1
   - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     message: wtf
     replyTime: 1
@@ -25,8 +28,8 @@ MonoBehaviour:
     message: NOOOOOO NOT MY WAIFU ;-;
     replyTime: 1
   - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-    message: 'Harmony games is holding my wife hostage '
+    message: Do yall even like your fanbase? /srs
     replyTime: 1
   - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-    message: "i can feel my credit cards heating up\u2026 "
+    message: LMAOO I just saw the ratings on Smoke dip in real time
     replyTime: 1

@@ -12,16 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2d7c603b1f34e40ae6ff5bba583c9c, type: 3}
   m_Name: JumpBack
   m_EditorClassIdentifier: 
-  message: "Dear ___ community,\r\nDue to overwhelming player feedback, we\u2019ve
-    decided to re-introduce jumping mechanics to gameplay.\r"
+  message: "Dear Cosmic Collision community,\r\nDue to overwhelming player feedback,
+    we\u2019ve decided to re-introduce jumping mechanics to gameplay. \r"
   messageTime: 1
   replies:
   - icon: {fileID: 21300000, guid: 86f92e9dd19081f4db9b4f0da69176f5, type: 3}
-    message: feedback?????? From who??????
+    message: Feedback?????? From who??????
+    replyTime: 1
+  - icon: {fileID: 21300000, guid: 86f92e9dd19081f4db9b4f0da69176f5, type: 3}
+    message: CC died so fast lol
     replyTime: 1
   - icon: {fileID: 21300000, guid: 86f92e9dd19081f4db9b4f0da69176f5, type: 3}
     message: No one asked for this
     replyTime: 1
   - icon: {fileID: 21300000, guid: 86f92e9dd19081f4db9b4f0da69176f5, type: 3}
     message: "Use this as a don\u2019t care button"
+    replyTime: 1
+  - icon: {fileID: 21300000, guid: 86f92e9dd19081f4db9b4f0da69176f5, type: 3}
+    message: Harmony Games just trolling atp
     replyTime: 1

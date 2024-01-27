@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2d7c603b1f34e40ae6ff5bba583c9c, type: 3}
   m_Name: AIContent
   m_EditorClassIdentifier: 
-  message: "Dear ___ community,\r\nWe see you, we hear you. To meet your excessive
-    demands, we\u2019ve decided to introduce AI-generated gameplay so that developers
-    can focus on what players want most: (waifus!)\r"
+  message: "Dear Cosmic Collision community,\r\nWe see you, we hear you. To meet
+    your excessive demands, we\u2019ve decided to introduce AI-generated gameplay
+    so that developers can focus on what players want most: (waifus!)\r"
   messageTime: 2
   replies: []
