@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2d7c603b1f34e40ae6ff5bba583c9c, type: 3}
   m_Name: LaserColour
   m_EditorClassIdentifier: 
-  message: 'Dear ___ community,
-
-    To show our appreciation for your continued
-    support, we have added a game-changing new feature: alternative laser colours!
-
-'
+  message: "Dear Cosmic Collision community,\r\nTo show our appreciation for your
+    continued support, we have added a game-changing new feature: alternative laser
+    colours!\n\rHappy Zapping!"
   messageTime: 1
   replies:
   - icon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
     message: "first the spin mechanic and now this\u2026. what the hell. give me
       my waifu back\r"
+    replyTime: 1
+  - icon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+    message: "Does anyone even play this anymore\u2026?\r"
     replyTime: 1

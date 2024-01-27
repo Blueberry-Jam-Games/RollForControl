@@ -42,6 +42,9 @@ public class FlowManager : MonoBehaviour
 
     public Dictionary<string, bool> inventory = new Dictionary<string, bool>();
 
+    [SerializeField]
+    private BGMController localSoundtrack;
+
     private void Awake()
     {
         if (_instance == null)
@@ -84,6 +87,7 @@ public class FlowManager : MonoBehaviour
 
     public void GameplayLose()
     {
+        localSoundtrack.GoToTheme(GameTheme.PINTAIL);
         currentLevel--; // go back and replay level
         StartCoroutine(LoadLevel(pinTailLevel));
     }
@@ -153,18 +157,21 @@ public class FlowManager : MonoBehaviour
 
     protected void GoToGacha(List<LootBoxRoll> lootBox)
     {
+        localSoundtrack.GoToTheme(GameTheme.GACHA);
         this.lootBoxMessage = lootBox;
         StartCoroutine(LoadLevel(gachalevel));
     }
 
     protected void GoToPigeon(List<PigeonDiscussion> pigeonDiscussion)
     {
+        localSoundtrack.GoToTheme(GameTheme.PIGEON);
         this.pigeonMessage = pigeonDiscussion;
         StartCoroutine(LoadLevel(pigeonlevel));
     }
 
     protected void GoToGameplay(string level)
     {
+        localSoundtrack.GoToTheme(GameTheme.GAMEPLAY);
         StartCoroutine(LoadLevel(level));
     }
 

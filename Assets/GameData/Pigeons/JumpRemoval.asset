@@ -12,23 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2d7c603b1f34e40ae6ff5bba583c9c, type: 3}
   m_Name: JumpRemoval
   m_EditorClassIdentifier: 
-  message: "Dear ___ community,\nIn light of recent feedback, we have removed the
-    jump function. Instead, try pressing (x button combination) in-game\u2026 Something
-    neat might happen! Thank you for continuing to enjoy (game)!"
+  message: "Dear Cosmic Collision community,\r\nIn light of recent feedback, we have
+    removed the jump function. Instead, try pressing \u201CQ\u201D in-game\u2026
+    Something neat might happen!\r\nThank you for continuing to enjoy Cosmic Collision!\r"
   messageTime: 2
   replies:
   - icon: {fileID: 21300000, guid: 6360ff426eb65f140aba6ed9c6ecedc6, type: 3}
     message: "AAA game studios: hey! We really value our customers and want to make
-      sure they\u2019re satisfied with their playing experience :) also AAA game
-      studios: here, take this completely useless feature in place of another completely
-      useless feature\r\n"
+      sure they\u2019re satisfied with their playing experience :)"
+    replyTime: 0
+  - icon: {fileID: 21300000, guid: 6360ff426eb65f140aba6ed9c6ecedc6, type: 3}
+    message: 'also AAA game studios: here, take this completely useless feature in
+      place of another completely useless feature'
     replyTime: 1
   - icon: {fileID: 21300000, guid: 6360ff426eb65f140aba6ed9c6ecedc6, type: 3}
     message: "\u2026 Why?"
     replyTime: 1
   - icon: {fileID: 21300000, guid: 6360ff426eb65f140aba6ed9c6ecedc6, type: 3}
-    message: Thanks Harmony!!!!! Best studio ever!!!!!!!!!
+    message: '>.<'
     replyTime: 1
   - icon: {fileID: 21300000, guid: 6360ff426eb65f140aba6ed9c6ecedc6, type: 3}
-    message: '>.<'
+    message: is it jus me or does this game feel like a social experiment
     replyTime: 1

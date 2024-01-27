@@ -12,10 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2d7c603b1f34e40ae6ff5bba583c9c, type: 3}
   m_Name: ImprovementAnnouncement
   m_EditorClassIdentifier: 
-  message: 'welcome to the game, so excited, free gift, blah blah, preorder reward
-    for loot box '
+  message: 'Welcome to the star-tastic world of Cosmic Collision! To show our appreciation
+    for your support, all release day players will be receiving a special in-game
+    lootbox to aid them on their journeys. Available through 01/28/2024 11:59pm PST.
+
+'
   messageTime: 2
   replies:
   - icon: {fileID: 21300000, guid: 7e8d9eb5a68e0b74a820b03b5d9132c2, type: 3}
-    message: Play level
+    message: OMG HYPE
+    replyTime: 1
+  - icon: {fileID: 21300000, guid: 7e8d9eb5a68e0b74a820b03b5d9132c2, type: 3}
+    message: common harmony w
+    replyTime: 1
+  - icon: {fileID: 21300000, guid: 7e8d9eb5a68e0b74a820b03b5d9132c2, type: 3}
+    message: Will there be catgirl waifus?
+    replyTime: 1
+  - icon: {fileID: 21300000, guid: 7e8d9eb5a68e0b74a820b03b5d9132c2, type: 3}
+    message: when is this coming out? what consoles?
+    replyTime: 1
+  - icon: {fileID: 21300000, guid: 7e8d9eb5a68e0b74a820b03b5d9132c2, type: 3}
+    message: "Harmony Games can take all my money fr, loved Indigo Path and can\u2019t
+      wait to see what CC is like"
     replyTime: 1
