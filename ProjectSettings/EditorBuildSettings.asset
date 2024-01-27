@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/GameLevels/BeachLevel.unity
+    guid: 9f0b22bff8c99134b910a313c0cb7c2a
+  - enabled: 1
     path: Assets/Scenes/GameLevels/TitleScreen.unity
     guid: 44ef9bb06074f544da347c2ed302bd2b
   - enabled: 1
