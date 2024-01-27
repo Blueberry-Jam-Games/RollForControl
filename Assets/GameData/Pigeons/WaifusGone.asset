@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2d7c603b1f34e40ae6ff5bba583c9c, type: 3}
+  m_Name: WaifusGone
+  m_EditorClassIdentifier: 
+  message: "Dear ___ community,\r\nTo increase character diversity, we have decided
+    to limit player access through optional purchases. All currently obtained characters
+    will be released. Players will be rewarded with two free lootboxes as compensation.
+    \r\nHappy gaming!\r"
+  messageTime: 3
+  replies:
+  - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    message: wtf
+    replyTime: 1
+  - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    message: NOOOOOO NOT MY WAIFU ;-;
+    replyTime: 1
+  - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    message: 'Harmony games is holding my wife hostage '
+    replyTime: 1
+  - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    message: "i can feel my credit cards heating up\u2026 "
+    replyTime: 1

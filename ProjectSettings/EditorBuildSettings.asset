@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Additive/PinTheTail.unity
     guid: ad1ca104b3ed7a5488f7b1d1690e3430
+  - enabled: 1
+    path: Assets/Scenes/GameLevels/StubGameplay.unity
+    guid: 1ff42c9955c337b47bb41b43796aa466
+  - enabled: 1
+    path: Assets/Scenes/GameLevels/ThanksForPlaying.unity
+    guid: e13dca645c6c4cc41a79498d20e09e76
   m_configObjects: {}

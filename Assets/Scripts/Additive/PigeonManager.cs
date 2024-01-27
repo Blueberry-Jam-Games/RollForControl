@@ -40,6 +40,8 @@ public class PigeonManager : MonoBehaviour
                 FlowManager.Instance.RequestVisable();
             }
         }
+
+        FlowManager.Instance.AddativeSceneDone();
     }
 
     private IEnumerator PlayDiscussion(PigeonDiscussion discussion)

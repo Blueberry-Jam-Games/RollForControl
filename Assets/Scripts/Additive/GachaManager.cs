@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using Random=UnityEngine.Random;
 
@@ -50,6 +48,9 @@ public class GachaManager : MonoBehaviour
             //Start of animation for lootboxes
             yield return DoRoll(rolls[i], rolls.Count - i, rolls);
         }
+
+        // end
+        FlowManager.Instance.AddativeSceneDone();
     }
 
     private IEnumerator DoRoll(LootBoxRoll roll, int remainingLootboxes, List<LootBoxRoll> rolls)

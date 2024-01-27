@@ -12,6 +12,7 @@ public class TitleScreen : MonoBehaviour
         {
             if (!once)
             {
+                Debug.Log("Triggering flow manager title screen");
                 once = true;
                 FlowManager.Instance.TitleScreenEnter();
             }

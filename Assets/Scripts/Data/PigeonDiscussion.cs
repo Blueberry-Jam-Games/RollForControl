@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "RFC/PigeonDiscussion", order = 2)]
 public class PigeonDiscussion : ScriptableObject
 {
+    [Multiline(5)]
     public string message;
     public float messageTime;
     public List<PigeonReply> replies;
@@ -14,6 +15,7 @@ public class PigeonDiscussion : ScriptableObject
 public class PigeonReply
 {
     public Sprite icon;
+    [Multiline(2)]
     public string message;
     public float replyTime;
 }
