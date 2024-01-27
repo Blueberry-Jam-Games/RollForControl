@@ -16,7 +16,6 @@ MonoBehaviour:
     we have decided to limit character access to optional purchases. All currently
     obtained characters will be released. Players will be rewarded with two free
     lootboxes as compensation. \r\nHappy gaming!\r"
-  messageTime: 3
   replies:
   - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     message: Harmony games is holding my wife hostage
@@ -33,3 +32,4 @@ MonoBehaviour:
   - icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     message: LMAOO I just saw the ratings on Smoke dip in real time
     replyTime: 1
+  voiceOver: {fileID: 8300000, guid: 2200c731c7b546b4fbb8b687419ea508, type: 3}

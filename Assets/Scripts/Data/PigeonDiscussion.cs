@@ -7,8 +7,9 @@ public class PigeonDiscussion : ScriptableObject
 {
     [Multiline(5)]
     public string message;
-    public float messageTime;
+    // public float messageTime;
     public List<PigeonReply> replies;
+    public AudioClip voiceOver;
 }
 
 [System.Serializable]

@@ -12,6 +12,16 @@ public class PigeonManager : MonoBehaviour
     [SerializeField]
     public List<CheepReply> replyPool;
 
+    [Header("Sounds")]
+    [SerializeField]
+    private AudioSource tweetSound;
+
+    [SerializeField]
+    private AudioSource tweetDialogue;
+
+    [SerializeField]
+    private AudioSource replySound;
+
     private void Start()
     {
         for (int i = 0; i < replyPool.Count; i++)
@@ -60,13 +70,25 @@ public class PigeonManager : MonoBehaviour
         Canvas.ForceUpdateCanvases();
         
         // trigger original message sound
-        yield return new WaitForSeconds(discussion.messageTime);
+        tweetSound.Play();
+        yield return new WaitForSeconds(tweetSound.clip.length);
+
+        if (discussion.voiceOver == null)
+        {
+            Debug.LogError($"Forgot to configure dialogue {tweetDialogue.name}");
+        }
+
+        tweetDialogue.clip = discussion.voiceOver;
+        tweetDialogue.Play();
+
+        yield return new WaitForSeconds(tweetDialogue.clip.length);
 
         for (int i = 0; i < discussion.replies.Count; i++)
         {
+            replySound.Play();
+            yield return new WaitForSeconds(replyPool[i].Durration / 2);
             replyPool[i].gameObject.SetActive(true);
-            // play voice
-            yield return new WaitForSeconds(replyPool[i].Durration);
+            yield return new WaitForSeconds(replyPool[i].Durration / 2);
         }
     }
 }

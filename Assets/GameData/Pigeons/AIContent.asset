@@ -15,5 +15,5 @@ MonoBehaviour:
   message: "Dear Cosmic Collision community,\r\nWe see you, we hear you. To meet
     your excessive demands, we\u2019ve decided to introduce AI-generated gameplay
     so that developers can focus on what players want most:\r"
-  messageTime: 2
   replies: []
+  voiceOver: {fileID: 8300000, guid: 7c92c4df9bf8795488600bf2d3d75803, type: 3}

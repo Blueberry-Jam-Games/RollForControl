@@ -17,7 +17,6 @@ MonoBehaviour:
     lootbox to aid them on their journeys. Available through 01/28/2024 11:59pm PST.
 
 '
-  messageTime: 2
   replies:
   - icon: {fileID: 21300000, guid: 7e8d9eb5a68e0b74a820b03b5d9132c2, type: 3}
     message: OMG HYPE
@@ -35,3 +34,4 @@ MonoBehaviour:
     message: "Harmony Games can take all my money fr, loved Indigo Path and can\u2019t
       wait to see what CC is like"
     replyTime: 1
+  voiceOver: {fileID: 8300000, guid: caf32300f9edca4408ee7fed32434135, type: 3}
