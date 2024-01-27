@@ -7,20 +7,15 @@ public class TailMovement : MonoBehaviour
     private Ray lastRay;
     public float distance = 10.0f;
     public Vector3 targetPosition;
-    private Rigidbody rb;
     public GameObject finalPosition;
 
     public bool pinned = false;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    public bool doMovement = false;
 
     private void Update()
     {
         // left mouse button
-        if (!pinned)
+        if (!pinned && doMovement)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
             {
@@ -29,17 +24,9 @@ public class TailMovement : MonoBehaviour
                 if (Physics.Raycast(lastRay, out RaycastHit hitInfo, maxDistance: 20.0f, layerMask: Physics.DefaultRaycastLayers, queryTriggerInteraction: QueryTriggerInteraction.Ignore))
                 {
                     targetPosition = hitInfo.point;
-                    // transform.position = targetPosition - new Vector3(0, 0.5f, 0);
+                    transform.position = targetPosition;
                 }
             }
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (!pinned)
-        {
-            rb.MovePosition(targetPosition);
         }
     }
 
@@ -55,14 +42,5 @@ public class TailMovement : MonoBehaviour
     {
         pinned = true;
         transform.position = finalPosition.transform.position;
-
-        // Level Done, do something about it
-        StartCoroutine(LevelDone());
-    }
-
-    private IEnumerator LevelDone()
-    {
-        yield return new WaitForSeconds(0.5f);
-        FlowManager.Instance.PinTailComplete();
     }
 }
