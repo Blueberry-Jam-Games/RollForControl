@@ -69,6 +69,6 @@ Material:
     - _Min: {r: 9, g: 35.9, b: 0, a: 0}
     - _SurfaceColor: {r: 0.19406366, g: 0.6763724, b: 0.8396226, a: 0}
     - _UV: {r: 0, g: 0, b: 0, a: 0}
-    - _depthColor: {r: 0.18022427, g: 0.19585955, b: 0.8490566, a: 0}
+    - _depthColor: {r: 0.5268779, g: 0.5375508, b: 0.6037736, a: 0}
     - _surfaceColor: {r: 0.21052867, g: 0.6818541, b: 0.7830188, a: 0}
   m_BuildTextureStacks: []
