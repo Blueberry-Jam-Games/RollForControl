@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class TailMovement : MonoBehaviour
@@ -56,5 +57,12 @@ public class TailMovement : MonoBehaviour
         transform.position = finalPosition.transform.position;
 
         // Level Done, do something about it
+        StartCoroutine(LevelDone());
+    }
+
+    private IEnumerator LevelDone()
+    {
+        yield return new WaitForSeconds(0.5f);
+        FlowManager.Instance.PinTailComplete();
     }
 }

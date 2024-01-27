@@ -46,11 +46,150 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171f85953dcb8e5459accfefc2193a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFlow:
+  - name: Improvement Announcement
+    actionType: 3
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion:
+    - {fileID: 11400000, guid: d240198c7cec1944bb536ba5623ff32f, type: 2}
+  - name: Control Roll 1
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll:
+    - {fileID: 11400000, guid: f99252f2bec50b24a95485a39d19681c, type: 2}
+    - {fileID: 11400000, guid: f8c66ddb922da3246b438ecf6823eea8, type: 2}
+    - {fileID: 11400000, guid: cbec405757dc9304b944aabc2840e039, type: 2}
+    - {fileID: 11400000, guid: 74f85cee278fa01428544006102dbae0, type: 2}
+    pigeonDiscussion: []
+  - name: Gameplay Limited Controls
+    actionType: 1
+    gameplayLevel: StubGameplay
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Gacha Deluxe Controls
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll:
+    - {fileID: 11400000, guid: 9d684eeb02eab094b9c55546d75f58a5, type: 2}
+    pigeonDiscussion: []
+  - name: Waifu Dialogue
+    actionType: 1
+    gameplayLevel: StubGameplay
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Waifu Lootbox
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll:
+    - {fileID: 11400000, guid: 8245874c1d3d671498edec50fdda28c4, type: 2}
+    pigeonDiscussion: []
+  - name: Tutorial Gameplay 1
+    actionType: 1
+    gameplayLevel: StubGameplay
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Gameplay Lootboxes
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Pigeon Jump Removal
+    actionType: 3
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion:
+    - {fileID: 11400000, guid: 500d907c1d13d75469e310e9a0a31394, type: 2}
+  - name: Gacha Spin Button
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll:
+    - {fileID: 11400000, guid: 8580b9372b491c848b463ac9955ee12c, type: 2}
+    pigeonDiscussion: []
+  - name: Gameplay Level 2
+    actionType: 1
+    gameplayLevel: StubGameplay
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Gameplay Lootbox 2
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Pigeon Waifus Gone
+    actionType: 3
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion:
+    - {fileID: 11400000, guid: a99e322c86ff91c499c3eca5dc0f0994, type: 2}
+  - name: Waifu Consolation Gacha
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Gameplay 3
+    actionType: 1
+    gameplayLevel: StubGameplay
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Gameplay Lootbox 3
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Laser Colour Pigeon
+    actionType: 3
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion:
+    - {fileID: 11400000, guid: e1f508e6030e8b843b7b522b300f04e6, type: 2}
+  - name: Laser Colour Gacha
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Gameplay 4
+    actionType: 1
+    gameplayLevel: StubGameplay
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Gameplay Gacha 4
+    actionType: 2
+    gameplayLevel: StubGameplay
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Pigeon Jump Back
+    actionType: 3
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion:
+    - {fileID: 11400000, guid: 7add363f1635bf04c98e6762673d4fc5, type: 2}
+  - name: Gacha Jump Back
+    actionType: 2
+    gameplayLevel: 
+    lootBoxRoll:
+    - {fileID: 11400000, guid: 74f85cee278fa01428544006102dbae0, type: 2}
+    pigeonDiscussion: []
+  - name: Gameplay 5
+    actionType: 1
+    gameplayLevel: StubGameplay
+    lootBoxRoll: []
+    pigeonDiscussion: []
+  - name: Pigeon AI Content
+    actionType: 3
+    gameplayLevel: 
+    lootBoxRoll: []
+    pigeonDiscussion:
+    - {fileID: 11400000, guid: 8dc5ee839beb24f4685eb2ad8c481921, type: 2}
+  currentLevel: 0
   gachalevel: LootBox
   pigeonlevel: Pigeon
+  pinTailLevel: PinTheTail
+  thanksForPlaying: ThanksForPlaying
+  replayGacha: {fileID: 11400000, guid: b3b2e19689b4b144794968793a39d79c, type: 2}
   levelAnimator: {fileID: 4941002393156239998}
-  lootBoxMessage: {fileID: 0}
-  pigeonMessage: {fileID: 0}
+  lootBoxMessage: []
+  pigeonMessage: []
 --- !u!114 &156081562711224429
 MonoBehaviour:
   m_ObjectHideFlags: 0

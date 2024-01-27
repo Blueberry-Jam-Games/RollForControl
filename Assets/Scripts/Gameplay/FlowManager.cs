@@ -19,16 +19,25 @@ public class FlowManager : MonoBehaviour
     [SerializeField]
     private string pigeonlevel;
 
-    // TODO gameplay levels
+    [SerializeField]
+    private string pinTailLevel;
+
+    [SerializeField]
+    private string thanksForPlaying;
+
+    [SerializeField]
+    private LootBoxRoll replayGacha;
 
     [SerializeField]
     private Animator levelAnimator;
 
     // Used to communicate data from 1 scene to the next, if you get to gacha or pigeon just assume it exists and keep going
-    //[HideInInspector]
+    [HideInInspector]
     public List<LootBoxRoll> lootBoxMessage;
 
-    //[HideInInspector]
+    private List<LootBoxRoll> gameplayLootboxes;
+
+    [HideInInspector]
     public List<PigeonDiscussion> pigeonMessage;
 
     public Dictionary<string, bool> inventory = new Dictionary<string, bool>();
@@ -57,13 +66,49 @@ public class FlowManager : MonoBehaviour
         // LootBoxRoll lbr = new LootBoxRoll();
         // lbr.rolls = new List<LootBoxItem>();
         // GoToGacha(lbr);
+        Debug.Log("Title Screen Flow Trigger");
         HandleNextGameFlow();
+    }
+
+    public void AddativeSceneDone()
+    {
+        HandleNextGameFlow();
+    }
+
+    public void GameplayWin(List<LootBoxRoll> gameplayGachas)
+    {
+        gameplayLootboxes = gameplayGachas;
+        HandleNextGameFlow();
+        // TODO gameplay gachas
+    }
+
+    public void GameplayLose()
+    {
+        currentLevel--; // go back and replay level
+        StartCoroutine(LoadLevel(pinTailLevel));
+    }
+
+    public void PinTailComplete()
+    {
+        List<LootBoxRoll> replayGachas = new List<LootBoxRoll>{
+            replayGacha
+        };
+        GoToGacha(replayGachas);
     }
 
     protected void HandleNextGameFlow()
     {
         currentLevel++;
+
+        if (currentLevel >= gameFlow.Count)
+        {
+            GoToThanksForPlaying();
+            return;
+        }
+
         LevelAction next = gameFlow[currentLevel];
+
+        Debug.Log($"Handling next action {currentLevel} called {next.name}");
 
         if (next.actionType == ActionType.CRASH)
         {
@@ -77,34 +122,50 @@ public class FlowManager : MonoBehaviour
         else if (next.actionType == ActionType.GACHA)
         {
             // Somehow run each of the gacha rolls.
+            List<LootBoxRoll> gachas = next.lootBoxRoll;
+
+            if (gameplayLootboxes != null && gameplayLootboxes.Count > 0)
+            {
+                gachas.AddRange(gameplayLootboxes);
+            }
+
+            if (gachas.Count == 0)
+            {
+                // skip
+                HandleNextGameFlow();
+                return;
+            }
+            GoToGacha(gachas);
+            // Optional ADD GAMEPLAY ITEMS
         }
         else if (next.actionType == ActionType.PIGEON)
         {
             // Somehow run each pigeon discussion.
+            List<PigeonDiscussion> cheeps = next.pigeonDiscussion;
+            GoToPigeon(cheeps);
         }
     }
 
-    protected void GoToGacha(LootBoxRoll lootBox)
+    protected void GoToThanksForPlaying()
     {
-        this.lootBoxMessage = new List<LootBoxRoll>
-        {
-            lootBox
-        };
+        StartCoroutine(LoadLevel(thanksForPlaying));
+    }
+
+    protected void GoToGacha(List<LootBoxRoll> lootBox)
+    {
+        this.lootBoxMessage = lootBox;
         StartCoroutine(LoadLevel(gachalevel));
     }
 
-    protected void GoToPigeon(PigeonDiscussion pigeonDiscussion)
+    protected void GoToPigeon(List<PigeonDiscussion> pigeonDiscussion)
     {
-        this.pigeonMessage = new List<PigeonDiscussion>
-        {
-            pigeonDiscussion
-        };
+        this.pigeonMessage = pigeonDiscussion;
         StartCoroutine(LoadLevel(pigeonlevel));
     }
 
     protected void GoToGameplay(string level)
     {
-        // TODO
+        StartCoroutine(LoadLevel(level));
     }
 
     private IEnumerator LoadLevel(string levelName)
@@ -143,6 +204,8 @@ public class FlowManager : MonoBehaviour
 [System.Serializable]
 public class LevelAction
 {
+    // Not used by code but shows up in editor
+    public string name;
     public ActionType actionType;
 
     /**Only used if it is a gameplay section*/
