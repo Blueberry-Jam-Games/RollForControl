@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaifusGone
   m_EditorClassIdentifier: 
   message: "Dear Cosmic Collision community,\r\nTo increase character diversity,
-    we have decided to limit player access through optional purchases. All currently
+    we have decided to limit character access to optional purchases. All currently
     obtained characters will be released. Players will be rewarded with two free
     lootboxes as compensation. \r\nHappy gaming!\r"
   messageTime: 3

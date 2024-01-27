@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: "Dear Cosmic Collision community,\r\nWe see you, we hear you. To meet
     your excessive demands, we\u2019ve decided to introduce AI-generated gameplay
-    so that developers can focus on what players want most: (waifus!)\r"
+    so that developers can focus on what players want most:\r"
   messageTime: 2
   replies: []

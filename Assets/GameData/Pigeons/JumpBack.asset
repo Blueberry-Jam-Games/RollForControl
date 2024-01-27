@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JumpBack
   m_EditorClassIdentifier: 
   message: "Dear Cosmic Collision community,\r\nDue to overwhelming player feedback,
-    we\u2019ve decided to re-introduce jumping mechanics to gameplay. \r"
+    we\u2019ve decided to re-introduce jumping mechanics to gameplay.\nHappy Hopping!\r"
   messageTime: 1
   replies:
   - icon: {fileID: 21300000, guid: 86f92e9dd19081f4db9b4f0da69176f5, type: 3}
