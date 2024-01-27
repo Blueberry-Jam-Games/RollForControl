@@ -15,7 +15,6 @@ MonoBehaviour:
   message: "Dear Cosmic Collision community,\r\nTo show our appreciation for your
     continued support, we have added a game-changing new feature: alternative laser
     colours!\n\rHappy Zapping!"
-  messageTime: 1
   replies:
   - icon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
     message: "first the spin mechanic and now this\u2026. what the hell. give me
@@ -24,3 +23,4 @@ MonoBehaviour:
   - icon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
     message: "Does anyone even play this anymore\u2026?\r"
     replyTime: 1
+  voiceOver: {fileID: 8300000, guid: 8ad8bba6e4e3425468cf796ee3501172, type: 3}
