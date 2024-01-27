@@ -7,6 +7,7 @@ public class EnemyLogic : MonoBehaviour
     private int hp = 3;
     private bool started = false;
     public float speed = 1f;
+    public bool passedOnce = false;
 
     private GameObject waifu;
 
@@ -26,6 +27,12 @@ public class EnemyLogic : MonoBehaviour
         else if (started)
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+        if (!passedOnce && transform.position.x - waifu.transform.position.x < 0)
+        {
+            passedOnce = true;
+            RigidBodyMovement pc = waifu.GetComponent<RigidBodyMovement>();
+            pc.TakeDamage();
         }
     }
 
@@ -47,4 +54,10 @@ public class EnemyLogic : MonoBehaviour
     {
 
     }
-}w
+
+
+    void AnimateThis()
+    {
+
+    }
+}

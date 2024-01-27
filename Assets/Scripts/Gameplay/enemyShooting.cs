@@ -23,9 +23,10 @@ public class enemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!started && Input.GetButtonDown("Fire1"))
+        if (!started && transform.position.x - waifu.transform.position.x < 17)
         {
             started = true;
+            timer = Random.Range(0f,1f);
         }
         else if (started)
         {
@@ -43,7 +44,6 @@ public class enemyShooting : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log(transform.position.x - waifu.transform.position.x);
         if (transform.position.x - waifu.transform.position.x < 17)
         {
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
