@@ -37,7 +37,7 @@ public class FlowManager : MonoBehaviour
 
     private List<LootBoxRoll> gameplayLootboxes;
 
-    //[HideInInspector]
+    [HideInInspector]
     public List<PigeonDiscussion> pigeonMessage;
 
     public Dictionary<string, bool> inventory = new Dictionary<string, bool>();
