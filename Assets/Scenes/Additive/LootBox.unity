@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028548, g: 0.2257163, b: 0.30692375, a: 1}
+  m_IndirectSpecularColor: {r: 0.18361564, g: 0.22911543, b: 0.30532837, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 89c1d20f5e500184799555f310465705,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 0ae47e8708d6672428cc11c9efe1b023,
     type: 2}
 --- !u!196 &4
@@ -976,7 +977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.626, y: 0.34900004}
+  m_AnchoredPosition: {x: -0.664, y: 0.34900004}
   m_SizeDelta: {x: 1.96, y: 0.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831641440
@@ -1484,7 +1485,7 @@ PrefabInstance:
     - target: {fileID: 2270391081958604624, guid: ba4cc3e02f560b840bb547e7a78933db,
         type: 3}
       propertyPath: m_CastShadows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3835294580639030054, guid: ba4cc3e02f560b840bb547e7a78933db,
         type: 3}
@@ -1494,8 +1495,13 @@ PrefabInstance:
     - target: {fileID: 8180400835426378414, guid: ba4cc3e02f560b840bb547e7a78933db,
         type: 3}
       propertyPath: m_CastShadows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8180400835426378414, guid: ba4cc3e02f560b840bb547e7a78933db,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 527c65a7fdbd7784bae65565db81fe4e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1894,8 +1900,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.7921569, g: 0.69803923, b: 0.78431374, a: 1}
-  m_Intensity: 1.25
+  m_Color: {r: 0.735849, g: 0.48940903, b: 0.56355906, a: 1}
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1934,7 +1940,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1953,13 +1959,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722724434}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33899334, y: 0.54120487, z: -0.25236773, w: 0.7269741}
-  m_LocalPosition: {x: -2.047, y: 3, z: 0}
+  m_LocalRotation: {x: 0.43617877, y: 0.46349618, z: 0.11845032, w: 0.7621607}
+  m_LocalPosition: {x: -2.724, y: 3, z: 0.281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: 73.333, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.716, y: 76.807, z: 44.681}
 --- !u!114 &1722724437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2228,10 +2234,10 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5663226466174207889}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2790,7 +2796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1769781458704403481
 Transform:
   m_ObjectHideFlags: 0
@@ -2822,7 +2828,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2531918994852620374
 Transform:
@@ -2888,7 +2894,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2936,7 +2942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &4256756982026731484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3351,7 +3357,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.7924528, g: 0.69900316, b: 0.78497684, a: 1}
-  m_Intensity: 1688.9
+  m_Intensity: 900
   m_Range: 80
   m_SpotAngle: 73.5
   m_InnerSpotAngle: 21.80208
@@ -3390,7 +3396,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
