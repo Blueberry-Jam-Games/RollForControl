@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: RetryGacha
   m_EditorClassIdentifier: 
   rolls:
-  - name: Try Again
+  - name: Retry Level
     image: {fileID: 21300000, guid: f14ccca373b1a9e44b4e44ad7f118430, type: 3}
     percentage: 100
   - name: Game Over
     image: {fileID: 21300000, guid: 7153883305739c9438e194d40ea564e0, type: 3}
     percentage: 0
-  LootBoxName: 
+  LootBoxName: Retry Lootbox
