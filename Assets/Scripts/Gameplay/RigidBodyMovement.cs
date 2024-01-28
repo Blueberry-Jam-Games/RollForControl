@@ -181,11 +181,11 @@ public class RigidBodyMovement : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !jumping && !spinning)
             {
                 Jump();
             }
-            else if (Input.GetKeyDown(KeyCode.Q))
+            else if (Input.GetKeyDown(KeyCode.Q) && !jumping && !spinning)
             {
                 Spin();
             }
