@@ -58,13 +58,16 @@ public class RigidBodyMovement : MonoBehaviour
         activeCharacter = GameObject.Instantiate(characterPrefabs[currentcharacter], transform);
         animator = activeCharacter.GetComponent<Animator>();
         weaponHand = GameObject.FindWithTag("WeaponHand");
+        Debug.Log($"Weapon hand is {weaponHand}");
         RefreshWand(currentWand);
     }
 
     private void RefreshWand(int wand)
     {
+        Debug.Log("Refreshing Wand");
         if (activeWand != null)
         {
+            Debug.Log("Active Wand not null");
             shootingref.bulletSpawnPoint = null;
             activeWand = null;
             wandShootPoint = null;
@@ -73,8 +76,9 @@ public class RigidBodyMovement : MonoBehaviour
 
         currentWand = wand;
         activeWand = GameObject.Instantiate(wandPrefabs[currentWand], weaponHand.transform);
+        Debug.Log($"Active wand created {activeWand.name}");
         wandShootPoint = GameObject.FindWithTag("ShootPoint");
-        Debug.Log($"Looking for null between {shootingref}, {wandShootPoint}");
+        Debug.Log($"Wand spawn concerned about null of either {shootingref}, {wandShootPoint}");
         shootingref.bulletSpawnPoint = wandShootPoint.transform;
     }
 
@@ -115,7 +119,7 @@ public class RigidBodyMovement : MonoBehaviour
                     else
                     {
                         // backwards
-                        animator.Play("Run");
+                        animator.Play("Backpedal");
                     }
                 }
                 else

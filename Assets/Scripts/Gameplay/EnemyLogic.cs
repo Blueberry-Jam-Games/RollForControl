@@ -13,6 +13,9 @@ public class EnemyLogic : MonoBehaviour
 
     [SerializeField]
     private HPBar hpBar;
+    
+    [SerializeField]
+    private Animator characterAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,7 @@ public class EnemyLogic : MonoBehaviour
         if (!started && transform.position.x - waifu.transform.position.x < 17)
         {
             started = true;
+            StartCoroutine(RandomAnimationTime());
         }
         else if (started)
         {
@@ -37,6 +41,12 @@ public class EnemyLogic : MonoBehaviour
             RigidBodyMovement pc = waifu.GetComponent<RigidBodyMovement>();
             pc.TakeDamage();
         }
+    }
+
+    private IEnumerator RandomAnimationTime()
+    {
+        yield return Random.Range(0.0f, 1.0f);
+        characterAnimator.Play("Run");
     }
 
     void OnCollisionEnter(Collision collision)

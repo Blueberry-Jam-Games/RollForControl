@@ -61,12 +61,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 57764f0e17a27d5478ab976a39edac7e,
         type: 3}
       propertyPath: m_Name
-      value: hatlessMafia_idle_001
+      value: CharacterHatlessMafia
       objectReference: {fileID: 0}
     - target: {fileID: 9056160547021469841, guid: 57764f0e17a27d5478ab976a39edac7e,
         type: 3}
       propertyPath: m_TagString
-      value: WeaponHand
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
