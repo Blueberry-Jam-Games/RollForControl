@@ -10,6 +10,8 @@ TagManager:
   - PlayerBullet
   - EnemyBullet
   - Waifu
+  - WeaponHand
+  - ShootPoint
   layers:
   - Default
   - TransparentFX

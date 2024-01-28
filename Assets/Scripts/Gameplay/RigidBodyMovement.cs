@@ -14,14 +14,68 @@ public class RigidBodyMovement : MonoBehaviour
     Vector3 movement;
     public bool tutorial = false;
     public bool paused = false;
-    // Start is called before the first frame update
-    void Start()
+
+    [Header("Visuals")]
+    public int currentcharacter;
+    public List<GameObject> characterPrefabs;
+    public int currentWand;
+    public List<GameObject> wandPrefabs;
+
+    private PlayerShooting shootingref;
+
+    // Things that change when we swap character models
+    private GameObject activeCharacter;
+    private Animator animator;
+    private GameObject weaponHand;
+    private GameObject activeWand;
+    private GameObject wandShootPoint;
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 0.2f, 0.0f);
+        shootingref = GetComponent<PlayerShooting>();
+        SetCharacter(currentcharacter);
     }
 
-    void Update()
+    private void SetCharacter(int character)
+    {
+        currentcharacter = character;
+
+        if (activeCharacter != null)
+        {
+            weaponHand = null;
+            animator = null;
+            shootingref.bulletSpawnPoint = null;
+            activeWand = null;
+            wandShootPoint = null;
+            GameObject.Destroy(activeCharacter);
+        }
+
+        activeCharacter = GameObject.Instantiate(characterPrefabs[currentcharacter], transform);
+        animator = activeCharacter.GetComponent<Animator>();
+        weaponHand = GameObject.FindWithTag("WeaponHand");
+        RefreshWand(currentWand);
+    }
+
+    private void RefreshWand(int wand)
+    {
+        if (activeWand != null)
+        {
+            shootingref.bulletSpawnPoint = null;
+            activeWand = null;
+            wandShootPoint = null;
+            GameObject.Destroy(activeWand);
+        }
+
+        currentWand = wand;
+        activeWand = GameObject.Instantiate(wandPrefabs[currentWand], weaponHand.transform);
+        wandShootPoint = GameObject.FindWithTag("ShootPoint");
+        Debug.Log($"Looking for null between {shootingref}, {wandShootPoint}");
+        shootingref.bulletSpawnPoint = wandShootPoint.transform;
+    }
+
+    private void Update()
     {
         // do the move thing tmrw
         if (!paused)
@@ -43,7 +97,14 @@ public class RigidBodyMovement : MonoBehaviour
                     isGrounded = false;
                 }
 
-
+                if (movement.sqrMagnitude > Mathf.Epsilon)
+                {
+                    animator.Play("Run");
+                }
+                else
+                {
+                    animator.Play("Idle");
+                }
             }
         }
     }
