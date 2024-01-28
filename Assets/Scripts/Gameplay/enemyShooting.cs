@@ -49,7 +49,7 @@ public class enemyShooting : MonoBehaviour
     {
         if (transform.position.x - waifu.transform.position.x < 17)
         {
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, 0, -90));
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             bulletRb.velocity = bulletSpawnPoint.right * bulletSpeed;
         }

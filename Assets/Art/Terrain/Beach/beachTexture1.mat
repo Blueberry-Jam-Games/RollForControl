@@ -237,8 +237,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _1st2nd_Shades_Feather: 0.0001
-    - _1st_ShadeColor_Feather: 0.253
-    - _1st_ShadeColor_Step: 0.391
+    - _1st_ShadeColor_Feather: 0.697
+    - _1st_ShadeColor_Step: 0.57
     - _2nd_ShadeColor_Feather: 0.0001
     - _2nd_ShadeColor_Step: 0
     - _AORemapMax: 1
@@ -270,8 +270,8 @@ Material:
     - _AutoRenderQueue: 1
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
-    - _BaseColor_Step: 0.391
-    - _BaseShade_Feather: 0.253
+    - _BaseColor_Step: 0.57
+    - _BaseShade_Feather: 0.697
     - _Base_Speed: 0
     - _Blend: 0
     - _BlendMode: 0
@@ -512,7 +512,7 @@ Material:
     - _utsVersionY: 9
     - _utsVersionZ: 5
     m_Colors:
-    - _1st_ShadeColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+    - _1st_ShadeColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
