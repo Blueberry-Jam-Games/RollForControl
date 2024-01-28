@@ -9,6 +9,7 @@ public class enemyShooting : MonoBehaviour
     public float bulletSpeed = -10f;
     public float cooldown = 1f;
     public float timer = 0f;
+    public bool dead = false;
 
     private GameObject waifu;
 
@@ -47,11 +48,16 @@ public class enemyShooting : MonoBehaviour
 
     void Shoot()
     {
-        if (transform.position.x - waifu.transform.position.x < 17)
+        if (transform.position.x - waifu.transform.position.x < 17 && !dead)
         {
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, 0, -90));
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             bulletRb.velocity = bulletSpawnPoint.right * bulletSpeed;
         }
+    }
+
+    public void Die()
+    {
+        dead = true;
     }
 }
