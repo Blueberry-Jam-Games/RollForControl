@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f241a636e8215624cbbbb83324d6640b, type: 3}
-  m_Name: WaifuLootbox
+  m_Name: WandLootbox
   m_EditorClassIdentifier: 
   rolls:
-  - name: Catgirl
-    image: {fileID: 21300000, guid: ae80aea8bd9294a46b459015fa2ef04d, type: 3}
+  - name: Wand2
+    image: {fileID: 21300000, guid: f8ab9b03c066cb7439e77e47a31ede60, type: 3}
     percentage: 30
-  - name: Foxgirl
-    image: {fileID: 21300000, guid: 8382b67b6352b314fa3e68e07d61c1d1, type: 3}
+  - name: Wand3
+    image: {fileID: 21300000, guid: e923b2c2ee3d51244a40b0d58da2c3d5, type: 3}
     percentage: 30
-  - name: Waifu
-    image: {fileID: 21300000, guid: fd54e9911b67f7b4cadca9ccf63a45e9, type: 3}
-    percentage: 30
-  LootBoxName: Waifu Lootbox
+  LootBoxName: Wand Lootbox

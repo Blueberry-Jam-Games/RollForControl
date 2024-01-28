@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f241a636e8215624cbbbb83324d6640b, type: 3}
+  m_Name: MiscLootbox2
+  m_EditorClassIdentifier: 
+  rolls:
+  - name: Wand2
+    image: {fileID: 21300000, guid: e923b2c2ee3d51244a40b0d58da2c3d5, type: 3}
+    percentage: 30
+  - name: Waifu
+    image: {fileID: 21300000, guid: fd54e9911b67f7b4cadca9ccf63a45e9, type: 3}
+    percentage: 30
+  - name: Yellow Laser
+    image: {fileID: 21300000, guid: 86f92e9dd19081f4db9b4f0da69176f5, type: 3}
+    percentage: 30
+  - name: spacebar
+    image: {fileID: 21300000, guid: 3cb1e238ac5595d4f93ba4c47c87f99a, type: 3}
+    percentage: 0
+  - name: Foxgirl
+    image: {fileID: 21300000, guid: 8382b67b6352b314fa3e68e07d61c1d1, type: 3}
+    percentage: 30
+  - name: Catgirl
+    image: {fileID: 21300000, guid: ae80aea8bd9294a46b459015fa2ef04d, type: 3}
+    percentage: 30
+  LootBoxName: Misc Lootbox
