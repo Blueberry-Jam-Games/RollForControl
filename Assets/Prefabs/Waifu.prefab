@@ -108,8 +108,12 @@ MonoBehaviour:
   paused: 0
   currentcharacter: 0
   characterPrefabs:
-  - {fileID: 1675161453526813108, guid: 86781b8c606f3cf47bff69f70591b744, type: 3}
+  - {fileID: 1659780662733952734, guid: af992780c63a6b14585edb2f640352e3, type: 3}
   - {fileID: 8892973320814966802, guid: e1ba8fbf9846c90439d1aecacc5de8a5, type: 3}
+  - {fileID: 6409410135130247573, guid: 3a5f29a9ac9b8a64ba229c7cf1d6d108, type: 3}
+  - {fileID: 613522508443263672, guid: f4d75ce571e6e7b42abecb2f5e4b6144, type: 3}
+  - {fileID: 66823855626084554, guid: 27486de5a552d21478cc3435e13a8b02, type: 3}
+  - {fileID: 1675161453526813108, guid: 86781b8c606f3cf47bff69f70591b744, type: 3}
   currentWand: 0
   wandPrefabs:
   - {fileID: 8738710218357289382, guid: 0d60cc52dba25854bb6f5f510ed7985e, type: 3}
