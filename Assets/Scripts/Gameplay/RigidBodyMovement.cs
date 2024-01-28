@@ -94,20 +94,49 @@ public class RigidBodyMovement : MonoBehaviour
             } 
             else
             {
-                movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speed;
+                float xv = Input.GetAxis("Horizontal");
+                float zv = Input.GetAxis("Vertical");
+                movement = new Vector3(xv, 0, zv) * speed;
                 if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
                 {
                     isGrounded = false;
                 }
 
-                if (movement.sqrMagnitude > Mathf.Epsilon)
-                {
-                    animator.Play("Run");
-                }
-                else
+                if (Mathf.Abs(xv) < Mathf.Epsilon && Mathf.Abs(zv) < Mathf.Epsilon)
                 {
                     animator.Play("Idle");
                 }
+                else if (Mathf.Abs(xv) > Mathf.Abs(zv))
+                {
+                    if (xv > 0)
+                    {
+                        animator.Play("Run");
+                    }
+                    else
+                    {
+                        // backwards
+                        animator.Play("Run");
+                    }
+                }
+                else
+                {
+                    if (zv > 0)
+                    {
+                        animator.Play("Left");
+                    }
+                    else
+                    {
+                        animator.Play("Right");
+                    }
+                }
+                // if (movement.sqrMagnitude > Mathf.Epsilon)
+                // {
+                //     animator.Play("Run");
+                // }
+                // else
+                // {
+                //     animator.Play("Idle");
+                // }
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
