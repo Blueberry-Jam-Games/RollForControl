@@ -23,21 +23,24 @@ public class enemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!started && transform.position.x - waifu.transform.position.x < 17)
+        if (!PauseControl.Instance.IsPaused(0))
         {
-            started = true;
-            timer = Random.Range(0f,1f);
-        }
-        else if (started)
-        {
-            if (timer > 0)
+            if (!started && transform.position.x - waifu.transform.position.x < 17)
             {
-                timer -= Time.deltaTime;
+                started = true;
+                timer = Random.Range(0f,1f);
             }
-            else // You can customize the input based on your needs
+            else if (started)
             {
-                Shoot();
-                timer = cooldown;
+                if (timer > 0)
+                {
+                    timer -= Time.deltaTime;
+                }
+                else // You can customize the input based on your needs
+                {
+                    Shoot();
+                    timer = cooldown;
+                }
             }
         }
     }

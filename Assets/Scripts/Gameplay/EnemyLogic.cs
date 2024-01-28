@@ -17,8 +17,6 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     private Animator characterAnimator;
 
-    private RuntimeAnimatorController runtimeAnimator;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -34,20 +32,23 @@ public class EnemyLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!started && transform.position.x - waifu.transform.position.x < 17)
+        if (!PauseControl.Instance.IsPaused(0))
         {
-            started = true;
-            StartCoroutine(RandomAnimationTime());
-        }
-        else if (started)
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
-        if (!passedOnce && transform.position.x - waifu.transform.position.x < 0)
-        {
-            passedOnce = true;
-            RigidBodyMovement pc = waifu.GetComponent<RigidBodyMovement>();
-            pc.TakeDamage();
+            if (!started && transform.position.x - waifu.transform.position.x < 17)
+            {
+                started = true;
+                StartCoroutine(RandomAnimationTime());
+            }
+            else if (started)
+            {
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
+            }
+            if (!passedOnce && transform.position.x - waifu.transform.position.x < 0)
+            {
+                passedOnce = true;
+                RigidBodyMovement pc = waifu.GetComponent<RigidBodyMovement>();
+                pc.TakeDamage();
+            }
         }
     }
 
@@ -72,13 +73,7 @@ public class EnemyLogic : MonoBehaviour
         }
     }
 
-    void LootboxDrop()
-    {
-
-    }
-
-
-    void AnimateThis()
+    private void LootboxDrop()
     {
 
     }

@@ -24,6 +24,7 @@ public class PauseControl : MonoBehaviour
         {
             // Destroy(this.gameObject);
         }
+        pausedChannels = new HashSet<byte>();
     }
 
     private void Start()
@@ -60,6 +61,11 @@ public class PauseControl : MonoBehaviour
     public void UnpauseGlobal()
     {
         pauseGlobal = false;
+    }
+
+    public bool IsPaused(byte layer)
+    {
+        return pausedChannels.Contains(layer);
     }
 
     private void Update()
