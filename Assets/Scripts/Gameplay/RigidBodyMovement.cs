@@ -67,7 +67,6 @@ public class RigidBodyMovement : MonoBehaviour
         {
             weaponHand = null;
             animator = null;
-            shootingref.bulletSpawnPoint = null;
             activeWand = null;
             wandShootPoint = null;
             GameObject.Destroy(activeCharacter);
@@ -97,7 +96,6 @@ public class RigidBodyMovement : MonoBehaviour
         if (activeWand != null)
         {
             Debug.Log("Active Wand not null, destroying");
-            shootingref.bulletSpawnPoint = null;
             wandShootPoint = null;
             GameObject.Destroy(activeWand);
         }
@@ -114,7 +112,6 @@ public class RigidBodyMovement : MonoBehaviour
         Debug.Log($"Active wand created {activeWand.name}");
         wandShootPoint = GameObject.FindWithTag("ShootPoint");
         Debug.Log($"Wand spawn concerned about null of either {shootingref}, {wandShootPoint}");
-        shootingref.bulletSpawnPoint = wandShootPoint.transform;
         shootingref.wand = currentWand;
     }
 
