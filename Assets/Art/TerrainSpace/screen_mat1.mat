@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: screen_mat1
-  m_Shader: {fileID: 4800000, guid: e4468eb8a8320f7488ddbb0e591f9fbc, type: 3}
+  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -237,8 +237,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _1st2nd_Shades_Feather: 0.063
-    - _1st_ShadeColor_Feather: 0.15
-    - _1st_ShadeColor_Step: 0.963
+    - _1st_ShadeColor_Feather: 0.252
+    - _1st_ShadeColor_Step: 0.889
     - _2nd_ShadeColor_Feather: 0.063
     - _2nd_ShadeColor_Step: 0.222
     - _AORemapMax: 1
@@ -270,8 +270,8 @@ Material:
     - _AutoRenderQueue: 1
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
-    - _BaseColor_Step: 0.963
-    - _BaseShade_Feather: 0.15
+    - _BaseColor_Step: 0.889
+    - _BaseShade_Feather: 0.252
     - _Base_Speed: 0
     - _Blend: 0
     - _BlendMode: 0
