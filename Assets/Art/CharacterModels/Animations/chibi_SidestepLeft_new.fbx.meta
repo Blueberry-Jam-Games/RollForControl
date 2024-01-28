@@ -1,49 +1,9 @@
 fileFormatVersion: 2
-guid: 0dcbd2953538cc84ab944f6b0a3ed6b4
+guid: 3d1bf86a2aafdf74c9c124eaba274ee2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: catgirl_rig_HumanEar_mat
-    second: {fileID: 2100000, guid: e0036ae780fbc504c8447ffd82fb692b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: catgirl_rig_body_geo1_lambert2SG1
-    second: {fileID: 2100000, guid: 415207204a9c1ab4cbd14becfa2676ca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: catgirl_rig_body_geo1_lambert4SG1
-    second: {fileID: 2100000, guid: 1c799fc971432b149b841123c9f246c3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: catgirl_rig_body_geo1_lambert5SG1
-    second: {fileID: 2100000, guid: 34e4793f11405ad45a82f73bb3bc0177, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: catgirl_rig_body_geo1_lambert6SG1
-    second: {fileID: 2100000, guid: 0a0eb6e24246a0746a80061cab1c980c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: catgirl_rig_body_geo1_lambert7SG1
-    second: {fileID: 2100000, guid: 6ae93dd69f794524d8a8866bf56d182a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: catgirl_rig_clothes_mat
-    second: {fileID: 2100000, guid: 24e03e33d4726ea4aa54e6fe22527ffd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 26f36788cf73cf84cbe770dc15ef4129, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -71,7 +31,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 1
+      lastFrame: 13
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 0
   meshes:
     lODScreenPercentages: []
