@@ -31,6 +31,135 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9130199807265409724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2837832492312843846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8729152634706574363}
+  - component: {fileID: 5332320048186566580}
+  m_Layer: 0
+  m_Name: SoundContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8729152634706574363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837832492312843846}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9130199807265409724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5332320048186566580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837832492312843846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e45d648bcc3a948bba9d5eca8335f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: die1
+    clip: {fileID: 8300000, guid: a3ba787724036924aae3ff8eb43a3077, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die2
+    clip: {fileID: 8300000, guid: fec8161c5d5e4d6499638fb0b7d41adc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die3
+    clip: {fileID: 8300000, guid: 8b4c4614a74e9ae48aced62d22f48cd1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die4
+    clip: {fileID: 8300000, guid: b1857d60132f16246a23ef8a57d1a3d2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die5
+    clip: {fileID: 8300000, guid: 90373346a997f43498c3d71b5025ea2a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die6
+    clip: {fileID: 8300000, guid: a67013d82ec208c4b91cf76d1f898a32, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die7
+    clip: {fileID: 8300000, guid: 06b4a1072d8597748998ab10ab0b37c7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die8
+    clip: {fileID: 8300000, guid: 0e5aa5fd88fad9d4daedfe1b894e28db, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die9
+    clip: {fileID: 8300000, guid: 36783584c705499449eed1eed0c07229, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: die10
+    clip: {fileID: 8300000, guid: 9834c64025db43145adefecef9cf69c0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: hit1
+    clip: {fileID: 8300000, guid: 3f401a3aa849faf42880b0ef71af9fc8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: hit2
+    clip: {fileID: 8300000, guid: 8aba47ce0addfb444b46f8f4bbe00d43, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    source: {fileID: 0}
 --- !u!1 &4694735221957552339
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +196,7 @@ Transform:
   - {fileID: 7240146578201429340}
   - {fileID: 6723170407975804231}
   - {fileID: 4485989385567752422}
+  - {fileID: 8729152634706574363}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &737500130876765255
@@ -135,6 +265,7 @@ MonoBehaviour:
   passedOnce: 0
   hpBar: {fileID: 1475186818226947822}
   characterAnimator: {fileID: 1821735585843033917}
+  sounds: {fileID: 5332320048186566580}
 --- !u!114 &616142980066148810
 MonoBehaviour:
   m_ObjectHideFlags: 0

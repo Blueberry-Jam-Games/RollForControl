@@ -1,28 +1,13 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Audio;
 
-public class SoundManager : MonoBehaviour
+public class CharacterSoundContainer : MonoBehaviour
 {
-    public static SoundManager _instance;
-    public static SoundManager Instance { get => _instance; }
-
     public List<PlayableSound> sounds;
     private Dictionary<string, PlayableSound> soundMap;
 
     private void Awake()
     {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-
         soundMap = new Dictionary<string, PlayableSound>();
 
         for (int i = 0, count = sounds.Count; i < count; i++)
@@ -36,6 +21,9 @@ public class SoundManager : MonoBehaviour
             // do playonawake sounds differently not here
             sound.source.playOnAwake = false;
             sound.source.loop = sound.loop;
+
+            sound.source.spatialBlend = sound.spatialBlend;
+            sound.source.spatialize = sound.spatialBlend > 0;
 
             if (!soundMap.ContainsKey(sound.name))
             {
@@ -59,22 +47,4 @@ public class SoundManager : MonoBehaviour
             Debug.LogError($"Sound {sound} not found");
         }
     }
-}
-
-[System.Serializable]
-public class PlayableSound
-{
-    public string name;
-    public AudioClip clip;
-
-    [Range(0f, 1f)]
-    public float volume = 1.0f;
-    [Range(0f, 1.5f)]
-    public float pitch = 1.0f;
-
-    public bool loop;
-    public float spatialBlend;
-
-    [HideInInspector]
-    public AudioSource source;
 }
