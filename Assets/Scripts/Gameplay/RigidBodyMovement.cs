@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class RigidBodyMovement : MonoBehaviour
 {
-    public Vector3 jump;
-    public float jumpForce = 2.0f;
-
     public bool isGrounded;
     protected Rigidbody rb;
     public float speed = 5f;
@@ -36,7 +33,6 @@ public class RigidBodyMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 0.2f, 0.0f);
         shootingref = GetComponent<PlayerShooting>();
         SetCharacter(currentcharacter);
     }
@@ -57,6 +53,12 @@ public class RigidBodyMovement : MonoBehaviour
 
         activeCharacter = GameObject.Instantiate(characterPrefabs[currentcharacter], transform);
         animator = activeCharacter.GetComponent<Animator>();
+
+        // make a unique runtime instance of the animator
+        RuntimeAnimatorController runtimeController = animator.runtimeAnimatorController;
+        RuntimeAnimatorController newController = Instantiate(runtimeController);
+        animator.runtimeAnimatorController = newController;
+
         weaponHand = GameObject.FindWithTag("WeaponHand");
         Debug.Log($"Weapon hand is {weaponHand}");
         RefreshWand(currentWand);
@@ -106,7 +108,11 @@ public class RigidBodyMovement : MonoBehaviour
                     isGrounded = false;
                 }
 
-                if (Mathf.Abs(xv) < Mathf.Epsilon && Mathf.Abs(zv) < Mathf.Epsilon)
+                if (jumping || spinning)
+                {
+                    // pass
+                }
+                else if (Mathf.Abs(xv) < Mathf.Epsilon && Mathf.Abs(zv) < Mathf.Epsilon)
                 {
                     animator.Play("Idle");
                 }
@@ -133,14 +139,6 @@ public class RigidBodyMovement : MonoBehaviour
                         animator.Play("Right");
                     }
                 }
-                // if (movement.sqrMagnitude > Mathf.Epsilon)
-                // {
-                //     animator.Play("Run");
-                // }
-                // else
-                // {
-                //     animator.Play("Idle");
-                // }
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
@@ -202,26 +200,8 @@ public class RigidBodyMovement : MonoBehaviour
 
     private IEnumerator DoJump()
     {
-        int characterAtStart = currentcharacter;
-        float startTime = Time.time;
-        float startY = activeCharacter.transform.position.y;
-
-        float delta;
-        while((delta = Time.time - startTime) < 0.75f || activeCharacter.transform.position.y <= startY)
-        {
-            if (characterAtStart != currentcharacter)
-            {
-                break;
-            }
-            // -\left(x-1.5\right)^{2}+2.25
-            float yOffset = -Mathf.Pow(4 * delta - 1.5f, 2.0f) + 2.25f;
-            Vector3 currentPos = activeCharacter.transform.position;
-            activeCharacter.transform.position = new Vector3(currentPos.x, startY + yOffset, currentPos.z);
-            yield return null;
-        }
-        
-        Vector3 placement = activeCharacter.transform.position;
-        activeCharacter.transform.position = new Vector3(placement.x, startY, placement.z);
+        animator.Play("Jump");
+        yield return new WaitForSeconds(0.708f);
         jumping = false;
     }
 
@@ -238,31 +218,10 @@ public class RigidBodyMovement : MonoBehaviour
         StartCoroutine(DoSpin());
     }
 
-    private float spinTime = 0.5f;
     private IEnumerator DoSpin()
     {
-        int characterAtStart = currentcharacter;
-        float startTime = Time.time;
-        // float startY = activeCharacter.transform.position.y;
-        float startYRotation = activeCharacter.transform.rotation.eulerAngles.y;
-
-        float delta;
-        while((delta = Time.time - startTime) < spinTime && activeCharacter.transform.rotation.eulerAngles.y <= startYRotation + 360f)
-        {
-            if (characterAtStart != currentcharacter)
-            {
-                break;
-            }
-
-            float yOffset = delta / spinTime * 360;
-
-            Vector3 prerotation = activeCharacter.transform.rotation.eulerAngles;
-            activeCharacter.transform.rotation = Quaternion.Euler(new Vector3(prerotation.x, startYRotation + yOffset, prerotation.z));
-            yield return null;
-        }
-        
-        Vector3 rotation = activeCharacter.transform.rotation.eulerAngles;
-        activeCharacter.transform.rotation = Quaternion.Euler(new Vector3(rotation.x, startYRotation, rotation.z));
+        animator.Play("Spin");
+        yield return new WaitForSeconds(0.985f);
         spinning = false;
     }
 }

@@ -17,10 +17,18 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     private Animator characterAnimator;
 
+    private RuntimeAnimatorController runtimeAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         waifu = GameObject.FindGameObjectWithTag("Waifu");
+
+        RuntimeAnimatorController runtimeController = characterAnimator.runtimeAnimatorController;
+        RuntimeAnimatorController newController = Instantiate(runtimeController);
+        characterAnimator.runtimeAnimatorController = newController;
+
+        characterAnimator.Play("Idle");
     }
 
     // Update is called once per frame
@@ -45,7 +53,7 @@ public class EnemyLogic : MonoBehaviour
 
     private IEnumerator RandomAnimationTime()
     {
-        yield return Random.Range(0.0f, 1.0f);
+        yield return new WaitForSeconds(Random.Range(0.0f, 2.0f));
         characterAnimator.Play("Run");
     }
 
