@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Profiling;
 using UnityEngine;
 
 public class RigidBodyMovement : MonoBehaviour
@@ -20,6 +21,8 @@ public class RigidBodyMovement : MonoBehaviour
     public List<GameObject> characterPrefabs;
     public int currentWand;
     public List<GameObject> wandPrefabs;
+
+    public HPBar healthbar;
 
     private PlayerShooting shootingref;
 
@@ -106,6 +109,15 @@ public class RigidBodyMovement : MonoBehaviour
                     animator.Play("Idle");
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
+            else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Spin();
+            }
         }
     }
 
@@ -131,6 +143,7 @@ public class RigidBodyMovement : MonoBehaviour
     public void TakeDamage()
     {
         hp--;
+        healthbar.UpdateHealth(hp, 15.0f);
         if (hp <= 0)
         {
             LoseGame();
@@ -142,18 +155,81 @@ public class RigidBodyMovement : MonoBehaviour
         Debug.Log("Dead Inside! Just like the devs :D");
     }
 
-    void Jump()
+    private bool jumping = false;
+    private void Jump()
     {
-
+        // TODO check for permission
+        if (jumping)
+        {
+            return;
+        }
+        jumping = true;
+        StartCoroutine(DoJump());
     }
 
-    void Spin()
+    private IEnumerator DoJump()
     {
+        int characterAtStart = currentcharacter;
+        float startTime = Time.time;
+        float startY = activeCharacter.transform.position.y;
+
+        float delta;
+        while((delta = Time.time - startTime) < 0.75f || activeCharacter.transform.position.y <= startY)
+        {
+            if (characterAtStart != currentcharacter)
+            {
+                break;
+            }
+            // -\left(x-1.5\right)^{2}+2.25
+            float yOffset = -Mathf.Pow(4 * delta - 1.5f, 2.0f) + 2.25f;
+            Vector3 currentPos = activeCharacter.transform.position;
+            activeCharacter.transform.position = new Vector3(currentPos.x, startY + yOffset, currentPos.z);
+            yield return null;
+        }
         
+        Vector3 placement = activeCharacter.transform.position;
+        activeCharacter.transform.position = new Vector3(placement.x, startY, placement.z);
+        jumping = false;
     }
 
-    void AnimateThis()
-    {
+    private bool spinning;
 
+    private void Spin()
+    {
+        // TODO check for permission
+        if (spinning)
+        {
+            return;
+        }
+        spinning = true;
+        StartCoroutine(DoSpin());
+    }
+
+    private float spinTime = 0.5f;
+    private IEnumerator DoSpin()
+    {
+        int characterAtStart = currentcharacter;
+        float startTime = Time.time;
+        // float startY = activeCharacter.transform.position.y;
+        float startYRotation = activeCharacter.transform.rotation.eulerAngles.y;
+
+        float delta;
+        while((delta = Time.time - startTime) < spinTime && activeCharacter.transform.rotation.eulerAngles.y <= startYRotation + 360f)
+        {
+            if (characterAtStart != currentcharacter)
+            {
+                break;
+            }
+
+            float yOffset = delta / spinTime * 360;
+
+            Vector3 prerotation = activeCharacter.transform.rotation.eulerAngles;
+            activeCharacter.transform.rotation = Quaternion.Euler(new Vector3(prerotation.x, startYRotation + yOffset, prerotation.z));
+            yield return null;
+        }
+        
+        Vector3 rotation = activeCharacter.transform.rotation.eulerAngles;
+        activeCharacter.transform.rotation = Quaternion.Euler(new Vector3(rotation.x, startYRotation, rotation.z));
+        spinning = false;
     }
 }

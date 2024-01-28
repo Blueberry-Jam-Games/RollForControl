@@ -959,7 +959,7 @@ Transform:
   m_GameObject: {fileID: 135976107}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: -43.5, y: 12.12, z: -19.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6004,11 +6004,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 616142980066148810, guid: e6bdf5446088c824cb4b78d3af3770b1,
-        type: 3}
-      propertyPath: cooldown
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4694735221957552339, guid: e6bdf5446088c824cb4b78d3af3770b1,
         type: 3}
       propertyPath: m_Name
@@ -7561,11 +7556,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -3482639276586084293, guid: e6bdf5446088c824cb4b78d3af3770b1,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4694735221957552339, guid: e6bdf5446088c824cb4b78d3af3770b1,
         type: 3}
       propertyPath: m_Name
