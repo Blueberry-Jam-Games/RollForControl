@@ -31,7 +31,8 @@ public class GachaManager : MonoBehaviour
 
     private void Start()
     {
-        fManager = FindObjectOfType<FlowManager>();
+        // fManager = FindObjectOfType<FlowManager>();
+        fManager = FlowManager.Instance;
         rewardedItem.gameObject.SetActive(false);
         lootBoxItemDisplayName.gameObject.SetActive(false);
         List<LootBoxRoll> rolls = FlowManager.Instance.lootBoxMessage;

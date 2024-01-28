@@ -80,12 +80,12 @@ public class FlowManager : MonoBehaviour
 
     public bool CheckPermission(string check)
     {
-        Debug.Log("InventoryPrint");
+        /*Debug.Log($"InventoryPrint {inventory.Count}");
         foreach (KeyValuePair<string, bool> kvp in inventory)
         {
             //textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
             Debug.Log($"Key = {kvp.Key}, Value = {kvp.Value}");
-        }
+        }*/
 
         return inventory.ContainsKey(check);
     }
@@ -93,9 +93,15 @@ public class FlowManager : MonoBehaviour
     public void GameplayWin(List<LootBoxRoll> gameplayGachas)
     {
         gameplayLootboxes = gameplayGachas;
-        HandleNextGameFlow();
         SoundManager.Instance.PlaySound("gameplaywin");
+        StartCoroutine(NextFlowLater());
         // TODO gameplay gachas
+    }
+
+    private IEnumerator NextFlowLater()
+    {
+        yield return new WaitForSeconds(0.25f);
+        HandleNextGameFlow();
     }
 
     public void GameplayLose()
