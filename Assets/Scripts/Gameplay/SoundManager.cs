@@ -59,6 +59,18 @@ public class SoundManager : MonoBehaviour
             Debug.LogError($"Sound {sound} not found");
         }
     }
+
+    public void StopSound(string sound)
+    {
+        if (soundMap.TryGetValue(sound, out PlayableSound playable))
+        {
+            playable.source.Stop();
+        }
+        else
+        {
+            Debug.LogError($"Sound {sound} not found");
+        }
+    }
 }
 
 [System.Serializable]
