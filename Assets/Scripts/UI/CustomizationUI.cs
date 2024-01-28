@@ -32,6 +32,8 @@ public class CustomizationUI : MonoBehaviour
 
     private GameObject playerRef;
 
+    public Material laserColor;
+
     private void Start()
     {
         if (menuUI.activeInHierarchy) menuUI.SetActive(false);
@@ -59,6 +61,8 @@ public class CustomizationUI : MonoBehaviour
                 menuUI.SetActive(false);
                 PauseControl.Instance.UnpauseLayer(0);
 
+                UpdateColor(colourGroup.GetSelected());
+
                 UpdatePlayer();
             }
         }
@@ -66,6 +70,34 @@ public class CustomizationUI : MonoBehaviour
         Debug.Log($"Started at {initialX}, at {playerRef.transform.position.x} went {playerRef.transform.position.x} distance out of {levelLength} for a percentage of {(playerRef.transform.position.x - initialX) / levelLength}");
         float percentComplete = Mathf.Abs((playerRef.transform.position.x - initialX) / levelLength);
         progressImage.rectTransform.anchoredPosition = new Vector3(percentComplete * 600f, 0.0f);
+    }
+
+    private void UpdateColor(int index)
+    {
+        if(index == 0)
+        {
+            laserColor.SetColor("_Color", Color.red);
+        }
+        else if(index == 1)
+        {
+            laserColor.SetColor("_Color", Color.yellow);
+        }
+        else if(index == 2)
+        {
+            laserColor.SetColor("_Color", Color.green);
+        }
+        else if(index == 3)
+        {
+            laserColor.SetColor("_Color", Color.blue);
+        }
+        else if(index == 4)
+        {
+            laserColor.SetColor("_Color", Color.cyan);
+        }
+        else if(index == 5)
+        {
+            laserColor.SetColor("_Color", Color.magenta);
+        }
     }
 
     private void MapToPlayer()
