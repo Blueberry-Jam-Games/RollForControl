@@ -11,6 +11,9 @@ public class EnemyLogic : MonoBehaviour
 
     private GameObject waifu;
 
+    [SerializeField]
+    private HPBar hpBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,7 @@ public class EnemyLogic : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet")
         {
             hp--;
+            hpBar.UpdateHealth(hp, 3.0f);
         }
         if (hp <= 0)
         {
