@@ -34,7 +34,7 @@ public class RigidBodyMovement : MonoBehaviour
     private GameObject activeWand;
     private GameObject wandShootPoint;
 
-    private string[] spawnSounds = { "catboyspawn", "miadspawn", "maidspawn", "foxspawn" };
+    private string[] spawnSounds = { "catboyspawn", "maidspawn", "maidspawn", "foxspawn" };
     private string prefix { get => currentcharacter == 0 ? "catboy" : "waifu"; }
     private string[] hitSounds = { "hit1", "hit2" };
 
@@ -123,55 +123,63 @@ public class RigidBodyMovement : MonoBehaviour
         // do the move thing tmrw
         if (!PauseControl.Instance.IsPaused(0))
         {
-            if (tutorial)
+            float xv;
+            float zv;
+            if (!FlowManager.Instance.CheckPermission("Premium Control Set"))
             {
-                float xdir = Input.GetAxis("Horizontal");
-                if (xdir < 0)
+                xv = Input.GetAxis("Horizontal");
+                if (xv < 0)
                 {
-                    xdir = 0;
+                    xv = 0;
                 }
-                movement = new Vector3(xdir, 0, 0) * speed;
+                zv = Input.GetAxis("Vertical");
+                if (zv < 0)
+                {
+                    zv = 0;
+                }
+                // movement = new Vector3(xdir, 0, ydir) * speed;
             } 
             else
             {
-                float xv = Input.GetAxis("Horizontal");
-                float zv = Input.GetAxis("Vertical");
-                movement = new Vector3(xv, 0, zv) * speed;
-                if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-                {
-                    isGrounded = false;
-                }
+                xv = Input.GetAxis("Horizontal");
+                zv = Input.GetAxis("Vertical");
+            }
 
-                if (jumping || spinning)
+            movement = new Vector3(xv, 0, zv) * speed;
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                isGrounded = false;
+            }
+
+            if (jumping || spinning)
+            {
+                // pass
+            }
+            else if (Mathf.Abs(xv) < Mathf.Epsilon && Mathf.Abs(zv) < Mathf.Epsilon)
+            {
+                animator.Play("Idle");
+            }
+            else if (Mathf.Abs(xv) > Mathf.Abs(zv))
+            {
+                if (xv > 0)
                 {
-                    // pass
-                }
-                else if (Mathf.Abs(xv) < Mathf.Epsilon && Mathf.Abs(zv) < Mathf.Epsilon)
-                {
-                    animator.Play("Idle");
-                }
-                else if (Mathf.Abs(xv) > Mathf.Abs(zv))
-                {
-                    if (xv > 0)
-                    {
-                        animator.Play("Run");
-                    }
-                    else
-                    {
-                        // backwards
-                        animator.Play("Backpedal");
-                    }
+                    animator.Play("Run");
                 }
                 else
                 {
-                    if (zv > 0)
-                    {
-                        animator.Play("Left");
-                    }
-                    else
-                    {
-                        animator.Play("Right");
-                    }
+                    // backwards
+                    animator.Play("Backpedal");
+                }
+            }
+            else
+            {
+                if (zv > 0)
+                {
+                    animator.Play("Left");
+                }
+                else
+                {
+                    animator.Play("Right");
                 }
             }
 
@@ -194,9 +202,20 @@ public class RigidBodyMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // If you want to despawn on collision with another object, you can handle it here
-        if (collision.gameObject.tag == "EnemyBullet")
+        if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             TakeDamage();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"Trigger enter {other.gameObject.name}");
+        if (other.gameObject.CompareTag("WinBox"))
+        {
+            Debug.Log("Win Level");
+            // TODO PASS THE GACHAS HERE WON IN THE LEVEL
+            FlowManager.Instance.GameplayWin(new List<LootBoxRoll>());
         }
     }
 
@@ -228,13 +247,14 @@ public class RigidBodyMovement : MonoBehaviour
     void LoseGame()
     {
         Debug.Log("Dead Inside! Just like the devs :D");
+        FlowManager.Instance.GameplayLose();
     }
 
     private bool jumping = false;
     private void Jump()
     {
         // TODO check for permission
-        if (jumping)
+        if (jumping || !FlowManager.Instance.CheckPermission("Jump Button"))
         {
             return;
         }
@@ -254,7 +274,7 @@ public class RigidBodyMovement : MonoBehaviour
     private void Spin()
     {
         // TODO check for permission
-        if (spinning)
+        if (spinning || !FlowManager.Instance.CheckPermission("Spin Button"))
         {
             return;
         }

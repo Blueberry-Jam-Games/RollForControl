@@ -91,6 +91,6 @@ public class PigeonManager : MonoBehaviour
             yield return new WaitForSeconds(replyPool[i].Durration / 2);
         }
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
     }
 }

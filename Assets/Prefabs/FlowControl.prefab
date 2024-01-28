@@ -452,7 +452,7 @@ MonoBehaviour:
     pigeonDiscussion: []
   - name: Gameplay Limited Controls
     actionType: 1
-    gameplayLevel: StubGameplay
+    gameplayLevel: TutorialLevel
     lootBoxRoll: []
     pigeonDiscussion: []
   - name: Gacha Deluxe Controls
@@ -461,9 +461,9 @@ MonoBehaviour:
     lootBoxRoll:
     - {fileID: 11400000, guid: 9d684eeb02eab094b9c55546d75f58a5, type: 2}
     pigeonDiscussion: []
-  - name: Waifu Dialogue
+  - name: Tutorial Gameplay 2
     actionType: 1
-    gameplayLevel: StubGameplay
+    gameplayLevel: TutorialLevelPart2
     lootBoxRoll: []
     pigeonDiscussion: []
   - name: Waifu Lootbox
@@ -471,11 +471,6 @@ MonoBehaviour:
     gameplayLevel: 
     lootBoxRoll:
     - {fileID: 11400000, guid: 8245874c1d3d671498edec50fdda28c4, type: 2}
-    pigeonDiscussion: []
-  - name: Tutorial Gameplay 1
-    actionType: 1
-    gameplayLevel: StubGameplay
-    lootBoxRoll: []
     pigeonDiscussion: []
   - name: Gameplay Lootboxes
     actionType: 2
@@ -494,12 +489,12 @@ MonoBehaviour:
     lootBoxRoll:
     - {fileID: 11400000, guid: 8580b9372b491c848b463ac9955ee12c, type: 2}
     pigeonDiscussion: []
-  - name: Gameplay Level 2
+  - name: Gameplay Level 1
     actionType: 1
-    gameplayLevel: StubGameplay
+    gameplayLevel: Level_1
     lootBoxRoll: []
     pigeonDiscussion: []
-  - name: Gameplay Lootbox 2
+  - name: Gameplay Lootbox 1
     actionType: 2
     gameplayLevel: 
     lootBoxRoll: []
@@ -893,9 +888,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayTheme: {fileID: 4517143634863223499}
+  gameplayVol: 0.7
   twitterTheme: {fileID: 7014574922873340992}
+  twitterVol: 0.5
   gachaTheme: {fileID: 9064081762317558756}
+  gachaVol: 0
   pinTailTheme: {fileID: 3314337053162864383}
+  pinTailVol: 0.7
 --- !u!1 &9178368074364238375
 GameObject:
   m_ObjectHideFlags: 0
