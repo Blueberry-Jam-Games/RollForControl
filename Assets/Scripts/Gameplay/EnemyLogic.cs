@@ -78,6 +78,7 @@ public class EnemyLogic : MonoBehaviour
         if (hp <= 0)
         {
             LootboxDrop();
+            gameObject.GetComponent<enemyShooting>().Die();
             sounds.PlaySound("die" + Random.Range(0, 10).ToString());
             StartCoroutine(DestroyLater());
         }

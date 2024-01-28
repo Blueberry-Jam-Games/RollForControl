@@ -33,6 +33,7 @@ public class RigidBodyMovement : MonoBehaviour
     private GameObject weaponHand;
     private GameObject activeWand;
     private GameObject wandShootPoint;
+    private List<LootBoxRoll> boxesToOpen = new List<LootBoxRoll>();
 
     private string[] spawnSounds = { "catboyspawn", "miadspawn", "maidspawn", "foxspawn" };
     private string prefix { get => currentcharacter == 0 ? "catboy" : "waifu"; }
@@ -267,5 +268,15 @@ public class RigidBodyMovement : MonoBehaviour
         animator.Play("Spin");
         yield return new WaitForSeconds(0.985f);
         spinning = false;
+    }
+
+    public void AddLootbox (LootBoxRoll box)
+    {
+        boxesToOpen.Add(box);
+    }
+
+    public List<LootBoxRoll> GetLootbox ()
+    {
+        return boxesToOpen;
     }
 }
