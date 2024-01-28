@@ -97,10 +97,14 @@ public class EnemyLogic : MonoBehaviour
 
     private void LootboxDrop()
     {
-
         if (Random.Range(0,1) > dropChance)
         {
-            waifu.GetComponent<RigidBodyMovement>().AddLootbox(boxesToDrop[Mathf.FloorToInt(Random.Range(0, boxesToDrop.Count))]);
+            int lower = 1;
+            if (FlowManager.Instance.CheckPermission("Red Laser"))
+            {
+                lower = 0;
+            }
+            waifu.GetComponent<RigidBodyMovement>().AddLootbox(boxesToDrop[Random.Range(lower, boxesToDrop.Count)]);
         }
     }
 }
