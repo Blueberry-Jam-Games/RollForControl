@@ -93,11 +93,11 @@ public class EnemyLogic : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public float dropChance = 0.5f;
+    public float dropChance = 50;
 
     private void LootboxDrop()
     {
-        if (Random.Range(0,1) > dropChance)
+        if (Random.Range(0,100) > dropChance)
         {
             int lower = 1;
             if (FlowManager.Instance.CheckPermission("Red Laser"))
