@@ -33,6 +33,7 @@ public class RigidBodyMovement : MonoBehaviour
     private GameObject weaponHand;
     private GameObject activeWand;
     private GameObject wandShootPoint;
+    private List<LootBoxRoll> boxesToOpen = new List<LootBoxRoll>();
 
     private string[] spawnSounds = { "catboyspawn", "maidspawn", "maidspawn", "foxspawn" };
     private string prefix { get => currentcharacter == 0 ? "catboy" : "waifu"; }
@@ -212,7 +213,7 @@ public class RigidBodyMovement : MonoBehaviour
         {
             Debug.Log("Win Level");
             // TODO PASS THE GACHAS HERE WON IN THE LEVEL
-            FlowManager.Instance.GameplayWin(new List<LootBoxRoll>());
+            FlowManager.Instance.GameplayWin(GetLootbox());
         }
     }
 
@@ -284,5 +285,15 @@ public class RigidBodyMovement : MonoBehaviour
         animator.Play("Spin");
         yield return new WaitForSeconds(0.985f);
         spinning = false;
+    }
+
+    public void AddLootbox(LootBoxRoll box)
+    {
+        boxesToOpen.Add(box);
+    }
+
+    public List<LootBoxRoll> GetLootbox()
+    {
+        return boxesToOpen;
     }
 }

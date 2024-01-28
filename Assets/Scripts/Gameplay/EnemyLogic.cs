@@ -20,6 +20,9 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     private CharacterSoundContainer sounds;
 
+    [SerializeField]
+    private List<LootBoxRoll> boxesToDrop = new List<LootBoxRoll>();
+
     private string[] hitsounds = {"hit1", "hit2"};
 
     // Start is called before the first frame update
@@ -78,6 +81,7 @@ public class EnemyLogic : MonoBehaviour
         if (hp <= 0)
         {
             LootboxDrop();
+            gameObject.GetComponent<enemyShooting>().Die();
             sounds.PlaySound("die" + Random.Range(1, 11).ToString());
             StartCoroutine(DestroyLater());
         }
@@ -89,8 +93,14 @@ public class EnemyLogic : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public float dropChance = 0.5f;
+
     private void LootboxDrop()
     {
 
+        if (Random.Range(0,1) > dropChance)
+        {
+            waifu.GetComponent<RigidBodyMovement>().AddLootbox(boxesToDrop[Mathf.FloorToInt(Random.Range(0, boxesToDrop.Count))]);
+        }
     }
 }
