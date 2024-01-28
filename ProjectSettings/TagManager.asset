@@ -12,6 +12,7 @@ TagManager:
   - Waifu
   - WeaponHand
   - ShootPoint
+  - HUDImage
   layers:
   - Default
   - TransparentFX

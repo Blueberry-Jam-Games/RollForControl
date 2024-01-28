@@ -99,8 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bf8749f52af8d45a48fb875912fc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {x: 0, y: 0, z: 0}
-  jumpForce: 2
   isGrounded: 0
   speed: 5
   hp: 15
@@ -110,8 +108,8 @@ MonoBehaviour:
   characterPrefabs:
   - {fileID: 1659780662733952734, guid: af992780c63a6b14585edb2f640352e3, type: 3}
   - {fileID: 8892973320814966802, guid: e1ba8fbf9846c90439d1aecacc5de8a5, type: 3}
-  - {fileID: 6409410135130247573, guid: 3a5f29a9ac9b8a64ba229c7cf1d6d108, type: 3}
   - {fileID: 1675161453526813108, guid: 86781b8c606f3cf47bff69f70591b744, type: 3}
+  - {fileID: 6409410135130247573, guid: 3a5f29a9ac9b8a64ba229c7cf1d6d108, type: 3}
   currentWand: 0
   wandPrefabs:
   - {fileID: 8738710218357289382, guid: 0d60cc52dba25854bb6f5f510ed7985e, type: 3}

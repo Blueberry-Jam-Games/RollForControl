@@ -11,7 +11,6 @@ public class RigidBodyMovement : MonoBehaviour
     public float hp = 15;
     Vector3 movement;
     public bool tutorial = false;
-    public bool paused = false;
 
     [Header("Visuals")]
     public int currentcharacter;
@@ -35,6 +34,19 @@ public class RigidBodyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         shootingref = GetComponent<PlayerShooting>();
         SetCharacter(currentcharacter);
+    }
+
+    public void SetCharacterAndWand(int newCharacter, int newWand)
+    {
+        // currentcharacter = newCharacter;
+        SetCharacter(newCharacter);
+        StartCoroutine(FixWandNextFrame(newWand));
+    }
+
+    private IEnumerator FixWandNextFrame(int newWand)
+    {
+        yield return null;
+        RefreshWand(newWand);
     }
 
     private void SetCharacter(int character)
@@ -66,17 +78,23 @@ public class RigidBodyMovement : MonoBehaviour
 
     private void RefreshWand(int wand)
     {
-        Debug.Log("Refreshing Wand");
+        Debug.Log($"Refreshing Wand {wand}");
         if (activeWand != null)
         {
-            Debug.Log("Active Wand not null");
+            Debug.Log("Active Wand not null, destroying");
             shootingref.bulletSpawnPoint = null;
-            activeWand = null;
             wandShootPoint = null;
             GameObject.Destroy(activeWand);
         }
 
         currentWand = wand;
+
+        if (weaponHand == null)
+        {
+            weaponHand = GameObject.FindWithTag("WeaponHand");
+        }
+
+        Debug.Log($"Weapon hand is {weaponHand.name}");
         activeWand = GameObject.Instantiate(wandPrefabs[currentWand], weaponHand.transform);
         Debug.Log($"Active wand created {activeWand.name}");
         wandShootPoint = GameObject.FindWithTag("ShootPoint");
@@ -87,7 +105,7 @@ public class RigidBodyMovement : MonoBehaviour
     private void Update()
     {
         // do the move thing tmrw
-        if (!paused)
+        if (!PauseControl.Instance.IsPaused(0))
         {
             if (tutorial)
             {
@@ -168,7 +186,14 @@ public class RigidBodyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = movement;
+        if (PauseControl.Instance.IsPaused(0))
+        {
+            rb.velocity = Vector3.zero;
+        }
+        else
+        {
+            rb.velocity = movement;
+        }
     }
 
     public void TakeDamage()
