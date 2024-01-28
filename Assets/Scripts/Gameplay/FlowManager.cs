@@ -75,6 +75,7 @@ public class FlowManager : MonoBehaviour
 
     public void AddativeSceneDone()
     {
+        gameplayLootboxes = null;
         HandleNextGameFlow();
     }
 

@@ -23,6 +23,8 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     private List<LootBoxRoll> boxesToDrop = new List<LootBoxRoll>();
 
+    private float dropChance = 75;
+
     private string[] hitsounds = {"hit1", "hit2"};
 
     // Start is called before the first frame update
@@ -92,8 +94,6 @@ public class EnemyLogic : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
-
-    public float dropChance = 50;
 
     private void LootboxDrop()
     {

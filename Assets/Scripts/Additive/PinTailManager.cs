@@ -16,6 +16,7 @@ public class PinTailManager : MonoBehaviour
         StartCoroutine(RunPinTailGame());
     }
 
+    private bool done = false;
     private IEnumerator RunPinTailGame()
     {
         // screen fade delay
@@ -36,6 +37,10 @@ public class PinTailManager : MonoBehaviour
         uiAnimator.Play("PinTailCongradulations");
         yield return new WaitForSeconds(1.84f);
 
-        FlowManager.Instance.PinTailComplete();
+        if (!done)
+        {
+            FlowManager.Instance.PinTailComplete();
+            done = true;
+        }
     }
 }
