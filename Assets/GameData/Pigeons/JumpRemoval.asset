@@ -34,3 +34,5 @@ MonoBehaviour:
     message: is it jus me or does this game feel like a social experiment
     replyTime: 1
   voiceOver: {fileID: 8300000, guid: 2bf5cb87bf3cff04a9c77d2755572528, type: 3}
+  removedInventory:
+  - Jump Button

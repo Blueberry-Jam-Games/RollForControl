@@ -10,6 +10,7 @@ public class PigeonDiscussion : ScriptableObject
     // public float messageTime;
     public List<PigeonReply> replies;
     public AudioClip voiceOver;
+    public List<string> removedInventory;
 }
 
 [System.Serializable]

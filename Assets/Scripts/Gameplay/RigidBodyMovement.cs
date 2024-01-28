@@ -34,7 +34,7 @@ public class RigidBodyMovement : MonoBehaviour
     private GameObject activeWand;
     private GameObject wandShootPoint;
 
-    private string[] spawnSounds = { "catboyspawn", "miadspawn", "maidspawn", "foxspawn" };
+    private string[] spawnSounds = { "catboyspawn", "maidspawn", "maidspawn", "foxspawn" };
     private string prefix { get => currentcharacter == 0 ? "catboy" : "waifu"; }
     private string[] hitSounds = { "hit1", "hit2" };
 
@@ -194,9 +194,20 @@ public class RigidBodyMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // If you want to despawn on collision with another object, you can handle it here
-        if (collision.gameObject.tag == "EnemyBullet")
+        if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             TakeDamage();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"Trigger enter {other.gameObject.name}");
+        if (other.gameObject.CompareTag("WinBox"))
+        {
+            Debug.Log("Win Level");
+            // TODO PASS THE GACHAS HERE WON IN THE LEVEL
+            FlowManager.Instance.GameplayWin(new List<LootBoxRoll>());
         }
     }
 
@@ -228,13 +239,14 @@ public class RigidBodyMovement : MonoBehaviour
     void LoseGame()
     {
         Debug.Log("Dead Inside! Just like the devs :D");
+        FlowManager.Instance.GameplayLose();
     }
 
     private bool jumping = false;
     private void Jump()
     {
         // TODO check for permission
-        if (jumping)
+        if (jumping || !FlowManager.Instance.CheckPermission("Jump Button"))
         {
             return;
         }
@@ -254,7 +266,7 @@ public class RigidBodyMovement : MonoBehaviour
     private void Spin()
     {
         // TODO check for permission
-        if (spinning)
+        if (spinning || !FlowManager.Instance.CheckPermission("Spin Button"))
         {
             return;
         }

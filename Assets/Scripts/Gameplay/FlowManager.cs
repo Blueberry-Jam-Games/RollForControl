@@ -78,6 +78,18 @@ public class FlowManager : MonoBehaviour
         HandleNextGameFlow();
     }
 
+    public bool CheckPermission(string check)
+    {
+        Debug.Log("InventoryPrint");
+        foreach (KeyValuePair<string, bool> kvp in inventory)
+        {
+            //textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+            Debug.Log($"Key = {kvp.Key}, Value = {kvp.Value}");
+        }
+
+        return inventory.ContainsKey(check);
+    }
+
     public void GameplayWin(List<LootBoxRoll> gameplayGachas)
     {
         gameplayLootboxes = gameplayGachas;
@@ -145,6 +157,16 @@ public class FlowManager : MonoBehaviour
         }
         else if (next.actionType == ActionType.PIGEON)
         {
+            // Pigeon remove inventory
+            for (int i = 0; i < next.pigeonDiscussion.Count; i++)
+            {
+                PigeonDiscussion pd = next.pigeonDiscussion[i];
+                for (int j = 0; j < pd.removedInventory.Count; i++)
+                {
+                    if (inventory.ContainsKey(pd.removedInventory[i])) inventory.Remove(pd.removedInventory[i]);
+                }
+            }
+
             // Somehow run each pigeon discussion.
             List<PigeonDiscussion> cheeps = next.pigeonDiscussion;
             GoToPigeon(cheeps);

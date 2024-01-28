@@ -78,7 +78,7 @@ public class EnemyLogic : MonoBehaviour
         if (hp <= 0)
         {
             LootboxDrop();
-            sounds.PlaySound("die" + Random.Range(0, 10).ToString());
+            sounds.PlaySound("die" + Random.Range(1, 11).ToString());
             StartCoroutine(DestroyLater());
         }
     }
