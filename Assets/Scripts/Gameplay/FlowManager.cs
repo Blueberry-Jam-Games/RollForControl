@@ -100,8 +100,9 @@ public class FlowManager : MonoBehaviour
 
     private IEnumerator NextFlowLater()
     {
-        yield return new WaitForSeconds(0.25f);
         HandleNextGameFlow();
+        yield return new WaitForSeconds(1f);
+        SoundManager.Instance.StopSound("gameplaywin");
     }
 
     public void GameplayLose()

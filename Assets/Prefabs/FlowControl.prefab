@@ -510,12 +510,12 @@ MonoBehaviour:
     gameplayLevel: 
     lootBoxRoll: []
     pigeonDiscussion: []
-  - name: Gameplay 3
+  - name: Gameplay 2
     actionType: 1
-    gameplayLevel: StubGameplay
+    gameplayLevel: Level_2
     lootBoxRoll: []
     pigeonDiscussion: []
-  - name: Gameplay Lootbox 3
+  - name: Gameplay Lootbox 2
     actionType: 2
     gameplayLevel: 
     lootBoxRoll: []
@@ -531,12 +531,12 @@ MonoBehaviour:
     gameplayLevel: 
     lootBoxRoll: []
     pigeonDiscussion: []
-  - name: Gameplay 4
+  - name: Gameplay 3
     actionType: 1
-    gameplayLevel: StubGameplay
+    gameplayLevel: Level_3
     lootBoxRoll: []
     pigeonDiscussion: []
-  - name: Gameplay Gacha 4
+  - name: Gameplay Gacha 3
     actionType: 2
     gameplayLevel: StubGameplay
     lootBoxRoll: []
