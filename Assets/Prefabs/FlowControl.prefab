@@ -755,7 +755,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 5941f0afea4d1714b85404a3044b7b48, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -890,7 +890,7 @@ MonoBehaviour:
   gameplayTheme: {fileID: 4517143634863223499}
   gameplayVol: 0.7
   twitterTheme: {fileID: 7014574922873340992}
-  twitterVol: 0.5
+  twitterVol: 0.3
   gachaTheme: {fileID: 9064081762317558756}
   gachaVol: 0
   pinTailTheme: {fileID: 3314337053162864383}
