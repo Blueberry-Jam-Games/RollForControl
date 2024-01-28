@@ -8,6 +8,9 @@ public class PinTailManager : MonoBehaviour
 
     public Animator uiAnimator;
 
+    [SerializeField]
+    private AudioSource tailPinned;
+
     void Start()
     {
         StartCoroutine(RunPinTailGame());
@@ -19,7 +22,7 @@ public class PinTailManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         // play animator
         uiAnimator.Play("PinTailInstructions");
-        yield return new WaitForSeconds(1.666f);
+        yield return new WaitForSeconds(1.91f);
         tail.doMovement = true;
         yield return new WaitForSeconds(0.6f);
 
@@ -27,6 +30,8 @@ public class PinTailManager : MonoBehaviour
         {
             yield return null;
         }
+
+        tailPinned.Play();
 
         uiAnimator.Play("PinTailCongradulations");
         yield return new WaitForSeconds(1.84f);

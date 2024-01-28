@@ -38,7 +38,7 @@ public class PigeonManager : MonoBehaviour
     private IEnumerator PlayAllDiscussions(List<PigeonDiscussion> cheeps)
     {
         // scene transition delay
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < cheeps.Count; i++)
         {
             yield return PlayDiscussion(cheeps[i]);
@@ -90,5 +90,7 @@ public class PigeonManager : MonoBehaviour
             replyPool[i].gameObject.SetActive(true);
             yield return new WaitForSeconds(replyPool[i].Durration / 2);
         }
+
+        yield return new WaitForSeconds(0.25f);
     }
 }

@@ -23,11 +23,14 @@ public class GachaManager : MonoBehaviour
 
     public LootBoxRoll waifuLootbox;
 
+    [SerializeField]
+    private AudioSource preLootbox;
+
+    [SerializeField]
+    private AudioSource rollSound;
+
     private void Start()
     {
-        // LootBoxRoll lbr = FlowManager.Instance.lootBoxMessage;
-        // LootBoxItem foundItem = RolledItem(lbr);
-
         fManager = FindObjectOfType<FlowManager>();
         rewardedItem.gameObject.SetActive(false);
         lootBoxItemDisplayName.gameObject.SetActive(false);
@@ -37,6 +40,7 @@ public class GachaManager : MonoBehaviour
 
     private IEnumerator PullLootBoxes(List<LootBoxRoll> rolls)
     {
+        preLootbox.Play();
         yield return null;
 
         lootboxQty.text = System.Convert.ToString(rolls.Count);
@@ -82,6 +86,9 @@ public class GachaManager : MonoBehaviour
             yield return null;
         }
 
+        preLootbox.Stop();
+        rollSound.Play();
+
         lootboxQty.text = System.Convert.ToString(remainingLootboxes - 1);
 
         // play animations
@@ -122,6 +129,8 @@ public class GachaManager : MonoBehaviour
             AddToInventory(rewardedItem.GetName());
             Debug.Log("Added Item \n" + rewardedItem.GetName() + "  " + fManager.inventory[rewardedItem.GetName()]);
         }
+
+        preLootbox.Play();
 
         while (!Input.GetKeyDown(KeyCode.Return))
         {

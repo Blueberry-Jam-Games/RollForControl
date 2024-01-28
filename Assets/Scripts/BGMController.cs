@@ -7,15 +7,19 @@ public class BGMController : MonoBehaviour
 {
     [SerializeField]
     private AudioSource gameplayTheme;
+    public float gameplayVol = 0.7f;
 
     [SerializeField]
     private AudioSource twitterTheme;
+    public float twitterVol = 0.5f;
 
     [SerializeField]
     private AudioSource gachaTheme;
+    public float gachaVol = 0.0f;
 
     [SerializeField]
     private AudioSource pinTailTheme;
+    public float pinTailVol = 0.7f;
 
     private GameTheme currentPlaying = GameTheme.NONE;
     private bool isTransitioning = false;
@@ -52,7 +56,7 @@ public class BGMController : MonoBehaviour
         float diff;
         while ((diff = Time.time - start) < 1.0f)
         {
-            target.volume = 1.0f - diff;
+            target.volume = (1.0f - diff) * GetTargetVolume(currentPlaying);
             yield return null;
         }
 
@@ -71,11 +75,11 @@ public class BGMController : MonoBehaviour
 
     private IEnumerator FadeInTheme(GameTheme theme)
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.5f);
         currentPlaying = theme;
         AudioSource target = GetPlayingTrack(currentPlaying);
 
-        target.volume = 1.0f;
+        target.volume = GetTargetVolume(currentPlaying);
         target.Play();
 
         isTransitioning = false;
@@ -90,6 +94,18 @@ public class BGMController : MonoBehaviour
             case GameTheme.GACHA: return gachaTheme;
             case GameTheme.PINTAIL: return pinTailTheme;
             default: return gameplayTheme;
+        }
+    }
+
+    private float GetTargetVolume(GameTheme themeCheck)
+    {
+        switch(themeCheck)
+        {
+            case GameTheme.GAMEPLAY: return gameplayVol;
+            case GameTheme.PIGEON: return twitterVol;
+            case GameTheme.GACHA: return gachaVol;
+            case GameTheme.PINTAIL: return pinTailVol;
+            default: return 0.0f;
         }
     }
 }

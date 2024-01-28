@@ -12,6 +12,9 @@ public class TailMovement : MonoBehaviour
     public bool pinned = false;
     public bool doMovement = false;
 
+    public Vector3 offset;
+    public Vector3 finalOffset;
+
     private void Update()
     {
         // left mouse button
@@ -24,7 +27,7 @@ public class TailMovement : MonoBehaviour
                 if (Physics.Raycast(lastRay, out RaycastHit hitInfo, maxDistance: 20.0f, layerMask: Physics.DefaultRaycastLayers, queryTriggerInteraction: QueryTriggerInteraction.Ignore))
                 {
                     targetPosition = hitInfo.point;
-                    transform.position = targetPosition;
+                    transform.position = targetPosition + offset;
                 }
             }
         }
@@ -41,6 +44,6 @@ public class TailMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         pinned = true;
-        transform.position = finalPosition.transform.position;
+        transform.position = finalPosition.transform.position + finalOffset;
     }
 }
