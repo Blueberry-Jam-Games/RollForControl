@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rolls:
   - name: Up Button
-    image: {fileID: 21300000, guid: 7153883305739c9438e194d40ea564e0, type: 3}
+    image: {fileID: 21300000, guid: f0bbe428d115c2c4e9ba19bf31445e82, type: 3}
     percentage: 0
   - name: Down Button
-    image: {fileID: 21300000, guid: 7153883305739c9438e194d40ea564e0, type: 3}
+    image: {fileID: 21300000, guid: 7330648afb3bae14290687eacffb14c9, type: 3}
     percentage: 0
   - name: Left Button
-    image: {fileID: 21300000, guid: 7153883305739c9438e194d40ea564e0, type: 3}
+    image: {fileID: 21300000, guid: 7acf3905b472a1c45a37bd90347e02e4, type: 3}
     percentage: 0
   - name: Right Button
-    image: {fileID: 21300000, guid: 7153883305739c9438e194d40ea564e0, type: 3}
+    image: {fileID: 21300000, guid: 3a21d9c2e3aada845beb7095f045b0d9, type: 3}
     percentage: 0
   - name: Jump Button
-    image: {fileID: 21300000, guid: 7153883305739c9438e194d40ea564e0, type: 3}
+    image: {fileID: 21300000, guid: 3cb1e238ac5595d4f93ba4c47c87f99a, type: 3}
     percentage: 0
   - name: Shoot Button
-    image: {fileID: 21300000, guid: 7153883305739c9438e194d40ea564e0, type: 3}
+    image: {fileID: 21300000, guid: b515ae42c6abfac4e9c085614dc3b33c, type: 3}
     percentage: 100
   LootBoxName: Control Lootbox
