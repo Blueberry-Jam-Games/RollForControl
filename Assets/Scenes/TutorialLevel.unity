@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: e75d3ca2eacd99e45b5218f601b931e9,
+  m_LightingDataAsset: {fileID: 112000000, guid: b8e59fd2899a2df4ead9b3839996234f,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 2bcfe03233726344bb3a68c737d2c3e2,
     type: 2}
@@ -558,6 +558,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
+        type: 3}
+      propertyPath: m_Name
+      value: tree_one (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 5255240450983631652, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -607,11 +612,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
-        type: 3}
-      propertyPath: m_Name
-      value: tree_one (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -762,6 +762,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4829226780269114840, guid: 8ec288a7bcb4eda48b1878304b97f366,
+        type: 3}
+      propertyPath: m_Name
+      value: beachBall
+      objectReference: {fileID: 0}
     - target: {fileID: 5210397067902332770, guid: 8ec288a7bcb4eda48b1878304b97f366,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -811,11 +816,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4829226780269114840, guid: 8ec288a7bcb4eda48b1878304b97f366,
-        type: 3}
-      propertyPath: m_Name
-      value: beachBall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1034,6 +1034,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
+        type: 3}
+      propertyPath: m_Name
+      value: tree_one (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 5255240450983631652, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1084,11 +1089,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
-        type: 3}
-      propertyPath: m_Name
-      value: tree_one (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1102,6 +1102,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
+        type: 3}
+      propertyPath: m_Name
+      value: tree_one (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5255240450983631652, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1151,11 +1156,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
-        type: 3}
-      propertyPath: m_Name
-      value: tree_one (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1223,6 +1223,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
+        type: 3}
+      propertyPath: m_Name
+      value: tree_one (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 5255240450983631652, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1272,11 +1277,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
-        type: 3}
-      propertyPath: m_Name
-      value: tree_one (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1669,6 +1669,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
+        type: 3}
+      propertyPath: m_Name
+      value: tree_one (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 5255240450983631652, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1718,11 +1723,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
-        type: 3}
-      propertyPath: m_Name
-      value: tree_one (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3123,6 +3123,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
+        type: 3}
+      propertyPath: m_Name
+      value: tree_one (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 5255240450983631652, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3172,11 +3177,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874458252296110494, guid: d68f0a88d707d134c85f81a9b6a3ffdb,
-        type: 3}
-      propertyPath: m_Name
-      value: tree_one (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
