@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4410647157305548844}
   - component: {fileID: 3243998328528218933}
+  - component: {fileID: 2880191060496518510}
   m_Layer: 5
   m_Name: Waifu2
   m_TagString: Untagged
@@ -178,6 +179,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &2880191060496518510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60698281125399810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Catgirl
 --- !u!1 &108559633667112959
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8984215008941752396}
   - component: {fileID: 1441904404961060378}
+  - component: {fileID: 6192700963146374712}
   m_Layer: 5
   m_Name: Magenta
   m_TagString: Untagged
@@ -613,6 +628,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &6192700963146374712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620299480783090121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Magenta Laser
 --- !u!1 &625201393374342308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6055855383337457950}
   - component: {fileID: 1741028603461815446}
+  - component: {fileID: 5013533163787584141}
   m_Layer: 5
   m_Name: Wand2
   m_TagString: Untagged
@@ -1939,6 +1968,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &5013533163787584141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876888631667269944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Wand2
 --- !u!1 &3903238560028685201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,6 +2067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5526077392228108850}
   - component: {fileID: 5876200215567957099}
+  - component: {fileID: 3095599604011308349}
   m_Layer: 5
   m_Name: Green
   m_TagString: Untagged
@@ -2100,6 +2143,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &3095599604011308349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138429315618392461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Green Laser
 --- !u!1 &4502183923215347541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,6 +2251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7621262107865221796}
   - component: {fileID: 8627442484767980768}
+  - component: {fileID: 8607722544902264694}
   m_Layer: 5
   m_Name: Wand3
   m_TagString: Untagged
@@ -2270,6 +2327,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &8607722544902264694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4506368294543232946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Wand3
 --- !u!1 &4600899939693276937
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,6 +3021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3296634592970217498}
   - component: {fileID: 5417568038680280483}
+  - component: {fileID: 7101224327991263812}
   m_Layer: 5
   m_Name: Yellow
   m_TagString: Untagged
@@ -3026,6 +3097,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &7101224327991263812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5883625236952834458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Yellow Laser
 --- !u!1 &6573653708145125753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,6 +3120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432923950312457025}
   - component: {fileID: 2095543187935944471}
+  - component: {fileID: 7517227490002262436}
   m_Layer: 5
   m_Name: Turquoise
   m_TagString: Untagged
@@ -3111,6 +3196,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &7517227490002262436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6573653708145125753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Turquoise Laser
 --- !u!1 &6600509425574520011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,6 +3644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509671444705618266}
   - component: {fileID: 7984312556913180528}
+  - component: {fileID: 8549206735594379655}
   m_Layer: 5
   m_Name: Blue
   m_TagString: Untagged
@@ -3621,6 +3720,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &8549206735594379655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256753048938252916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Blue Laser
 --- !u!1 &7368768130375726969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,6 +4212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6161193050892937302}
   - component: {fileID: 5084007674249092099}
+  - component: {fileID: 2418322244832710365}
   m_Layer: 5
   m_Name: Waifu3
   m_TagString: Untagged
@@ -4175,6 +4288,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &2418322244832710365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390403386301925963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Waifu
 --- !u!1 &8410548031873776342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4222,6 +4348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8088868635808919841}
   - component: {fileID: 7271988388209936967}
+  - component: {fileID: 3956465125873669468}
   m_Layer: 5
   m_Name: Waifu4
   m_TagString: Untagged
@@ -4297,6 +4424,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &3956465125873669468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979624874682365366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c86b9296ee04ca6d5e525716c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permission: Fox Girl
 --- !u!1001 &6043802446111421362
 PrefabInstance:
   m_ObjectHideFlags: 0
