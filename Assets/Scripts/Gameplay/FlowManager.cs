@@ -157,7 +157,7 @@ public class FlowManager : MonoBehaviour
 
     protected void GoToGacha(List<LootBoxRoll> lootBox)
     {
-        localSoundtrack.GoToTheme(GameTheme.GACHA);
+        localSoundtrack.GoToTheme(GameTheme.NONE);
         this.lootBoxMessage = lootBox;
         StartCoroutine(LoadLevel(gachalevel));
     }
