@@ -3,7 +3,57 @@ guid: e31a0887cfa1fcc478db3292e22599da
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CatEar_mat
+    second: {fileID: 2100000, guid: 733d6c4879b16064da928a478e632a16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tail_mat
+    second: {fileID: 2100000, guid: 5c17df2da4c17d6428ef06f30d18f0d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: clothes_mat
+    second: {fileID: 2100000, guid: 7ae7d01a7cf3f474d9d9ad4441c39a72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 5afc48610ec93654ea11a2cdbf8bb878, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert11SG1
+    second: {fileID: 2100000, guid: 11f0ae878ff3d534bb8edea7e3670bb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2SG1
+    second: {fileID: 2100000, guid: 70f2f6c3e53605d47920a1bcad755d12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4SG1
+    second: {fileID: 2100000, guid: 3905d799a19f31c4882d2b67c6450b98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5SG1
+    second: {fileID: 2100000, guid: 938e7f43289d0734ca00da280a3fd100, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6SG1
+    second: {fileID: 2100000, guid: 3f30cbde7c4d305419782acdeabd1d9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7SG1
+    second: {fileID: 2100000, guid: fa5715e4d3f78724abdd0233e906c41b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -66,9 +66,9 @@ Material:
     m_Colors:
     - _DeepColor: {r: 0.16820925, g: 0.19704315, b: 0.7924528, a: 0}
     - _Max: {r: 0, g: 1, b: 0, a: 0}
-    - _Min: {r: 9, g: 35.9, b: 0, a: 0}
+    - _Min: {r: 0, g: 54.36, b: 0, a: 0}
     - _SurfaceColor: {r: 0.19406366, g: 0.6763724, b: 0.8396226, a: 0}
     - _UV: {r: 0, g: 0, b: 0, a: 0}
-    - _depthColor: {r: 0.5268779, g: 0.5375508, b: 0.6037736, a: 0}
+    - _depthColor: {r: 0.14578141, g: 0.20001717, b: 0.49056602, a: 0}
     - _surfaceColor: {r: 0.21052867, g: 0.6818541, b: 0.7830188, a: 0}
   m_BuildTextureStacks: []

@@ -3,7 +3,52 @@ guid: 94b2c9298d98a004e9aa03b007a02420
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CatEar_mat
+    second: {fileID: 2100000, guid: 6e0cfb30ba0a1eb499cd38de9b08b7cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt_mat
+    second: {fileID: 2100000, guid: 1e9a84433ab444a45a7559f2cf120bb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: ccc203c49560ee341b1b9b0459160958, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2SG1
+    second: {fileID: 2100000, guid: a1f30d62a05d2114093176bf263d089a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4SG1
+    second: {fileID: 2100000, guid: 8a41d7761cc1df5459c37750de306ccb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5SG1
+    second: {fileID: 2100000, guid: 58e2d2de0a5dff14cb1bcf3647fb2405, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6SG1
+    second: {fileID: 2100000, guid: 5ce9ec1deb1caa542a19c8264c99cf1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7SG1
+    second: {fileID: 2100000, guid: 4dec6e8ae85161e469692b2b4e7cf5f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pants_mat
+    second: {fileID: 2100000, guid: 4a705cc71e866544aa768338437f4a40, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
