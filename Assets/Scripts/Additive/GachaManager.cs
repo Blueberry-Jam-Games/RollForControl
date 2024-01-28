@@ -29,6 +29,9 @@ public class GachaManager : MonoBehaviour
     [SerializeField]
     private AudioSource rollSound;
 
+    [SerializeField]
+    private GameObject instructions;
+
     private void Start()
     {
         // fManager = FindObjectOfType<FlowManager>();
@@ -82,10 +85,12 @@ public class GachaManager : MonoBehaviour
 
         //yield return new WaitForSeconds(1);
 
+        instructions.SetActive(true);
         while (requireInput && !Input.GetKeyDown(KeyCode.Return))
         {
             yield return null;
         }
+        instructions.SetActive(false);
 
         preLootbox.Stop();
         rollSound.Play();
@@ -133,10 +138,12 @@ public class GachaManager : MonoBehaviour
 
         preLootbox.Play();
 
+        instructions.SetActive(true);
         while (!Input.GetKeyDown(KeyCode.Return))
         {
             yield return null;
         }
+        instructions.SetActive(false);
     }
 
     private void AddToInventory(string name)
