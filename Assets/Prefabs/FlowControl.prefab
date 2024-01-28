@@ -553,9 +553,9 @@ MonoBehaviour:
     lootBoxRoll:
     - {fileID: 11400000, guid: 74f85cee278fa01428544006102dbae0, type: 2}
     pigeonDiscussion: []
-  - name: Gameplay 5
+  - name: Gameplay 4
     actionType: 1
-    gameplayLevel: StubGameplay
+    gameplayLevel: Level_4
     lootBoxRoll: []
     pigeonDiscussion: []
   - name: Pigeon AI Content
