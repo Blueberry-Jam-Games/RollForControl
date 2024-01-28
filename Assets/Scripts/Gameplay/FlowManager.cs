@@ -167,9 +167,10 @@ public class FlowManager : MonoBehaviour
             for (int i = 0; i < next.pigeonDiscussion.Count; i++)
             {
                 PigeonDiscussion pd = next.pigeonDiscussion[i];
-                for (int j = 0; j < pd.removedInventory.Count; i++)
+
+                for (int j = 0; j < pd.removedInventory.Count; j++)
                 {
-                    if (inventory.ContainsKey(pd.removedInventory[i])) inventory.Remove(pd.removedInventory[i]);
+                    if (inventory.ContainsKey(pd.removedInventory[j])) inventory.Remove(pd.removedInventory[j]);
                 }
             }
 
