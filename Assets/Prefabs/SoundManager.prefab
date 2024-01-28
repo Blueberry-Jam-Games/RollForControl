@@ -44,4 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cf778ce12e8fb41a38e5f1cc192820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: gameplaywin
+    clip: {fileID: 8300000, guid: 8c835218ef7a3c447a0fc7d00b7d6ce9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
