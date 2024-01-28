@@ -33,3 +33,7 @@ MonoBehaviour:
     message: LMAOO I just saw the ratings on Smoke dip in real time
     replyTime: 1
   voiceOver: {fileID: 8300000, guid: 2200c731c7b546b4fbb8b687419ea508, type: 3}
+  removedInventory:
+  - Catgirl
+  - Waifu
+  - Fox Girl

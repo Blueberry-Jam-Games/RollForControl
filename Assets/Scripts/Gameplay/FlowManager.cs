@@ -94,6 +94,7 @@ public class FlowManager : MonoBehaviour
     {
         gameplayLootboxes = gameplayGachas;
         SoundManager.Instance.PlaySound("gameplaywin");
+        Debug.Log($"Got gameplay gachas {gameplayGachas}");
         StartCoroutine(NextFlowLater());
         // TODO gameplay gachas
     }
@@ -150,15 +151,18 @@ public class FlowManager : MonoBehaviour
 
             if (gameplayLootboxes != null && gameplayLootboxes.Count > 0)
             {
+                Debug.Log("Adding gameplay lootboxes");
                 gachas.AddRange(gameplayLootboxes);
             }
 
             if (gachas.Count == 0)
             {
                 // skip
+                Debug.Log("Skipped gacha screen");
                 HandleNextGameFlow();
                 return;
             }
+            Debug.Log("Going to gachas");
             GoToGacha(gachas);
             // Optional ADD GAMEPLAY ITEMS
         }

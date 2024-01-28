@@ -508,7 +508,9 @@ MonoBehaviour:
   - name: Waifu Consolation Gacha
     actionType: 2
     gameplayLevel: 
-    lootBoxRoll: []
+    lootBoxRoll:
+    - {fileID: 11400000, guid: 8245874c1d3d671498edec50fdda28c4, type: 2}
+    - {fileID: 11400000, guid: 0a2f65ccf79893b4ab2d3ae7d104e129, type: 2}
     pigeonDiscussion: []
   - name: Gameplay 2
     actionType: 1
@@ -529,7 +531,8 @@ MonoBehaviour:
   - name: Laser Colour Gacha
     actionType: 2
     gameplayLevel: 
-    lootBoxRoll: []
+    lootBoxRoll:
+    - {fileID: 11400000, guid: 038551262d26dd14584af11106a74b44, type: 2}
     pigeonDiscussion: []
   - name: Gameplay 3
     actionType: 1
