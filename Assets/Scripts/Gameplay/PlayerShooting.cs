@@ -31,7 +31,7 @@ public class PlayerShooting : MonoBehaviour
         if (bulletSpawnPoint != null)
         {
             Vector3 spawnpoint = new Vector3(bulletSpawnPoint.position.x, 0.5f, bulletSpawnPoint.position.z);
-            GameObject bullet = Instantiate(bulletPrefab, spawnpoint, Quaternion.Euler(Vector3.zero));
+            GameObject bullet = Instantiate(bulletPrefab, spawnpoint, Quaternion.Euler(0, 0, 90));
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             bulletRb.velocity = new Vector3(1.0f, 0.0f, 0.0f) * bulletSpeed;
         }

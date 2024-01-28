@@ -20,9 +20,8 @@ public class CameraFollow : MonoBehaviour
     {
         if (target != null)
         {
-            Vector3 desiredPosition = new Vector3(target.position.x, 0f, 0f) + offset;
-            transform.position = new Vector3(desiredPosition.x, desiredPosition.y, desiredPosition.z);
-            transform.rotation = Quaternion.Euler(30f, 0f, 0f);
+            Vector3 desiredPosition = new Vector3(target.position.x + offset.x, transform.position.y, transform.position.z);
+            transform.position = desiredPosition;
             //transform.LookAt(target); // Make the camera look at the player
         }
     }
