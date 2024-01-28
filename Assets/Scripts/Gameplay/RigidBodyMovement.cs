@@ -9,6 +9,8 @@ public class RigidBodyMovement : MonoBehaviour
     protected Rigidbody rb;
     public float speed = 5f;
     public float hp = 15;
+    private float maxHealth;
+
     Vector3 movement;
     public bool tutorial = false;
 
@@ -20,6 +22,9 @@ public class RigidBodyMovement : MonoBehaviour
 
     public HPBar healthbar;
 
+    [SerializeField]
+    private CharacterSoundContainer sounds;
+
     private PlayerShooting shootingref;
 
     // Things that change when we swap character models
@@ -29,8 +34,13 @@ public class RigidBodyMovement : MonoBehaviour
     private GameObject activeWand;
     private GameObject wandShootPoint;
 
+    private string[] spawnSounds = { "catboyspawn", "miadspawn", "maidspawn", "foxspawn" };
+    private string prefix { get => currentcharacter == 0 ? "catboy" : "waifu"; }
+    private string[] hitSounds = { "hit1", "hit2" };
+
     private void Start()
     {
+        maxHealth = hp;
         rb = GetComponent<Rigidbody>();
         shootingref = GetComponent<PlayerShooting>();
         SetCharacter(currentcharacter);
@@ -73,6 +83,11 @@ public class RigidBodyMovement : MonoBehaviour
 
         weaponHand = GameObject.FindWithTag("WeaponHand");
         Debug.Log($"Weapon hand is {weaponHand}");
+
+        shootingref.character = currentcharacter;
+
+        sounds.PlaySound(spawnSounds[currentcharacter]);
+
         RefreshWand(currentWand);
     }
 
@@ -100,6 +115,7 @@ public class RigidBodyMovement : MonoBehaviour
         wandShootPoint = GameObject.FindWithTag("ShootPoint");
         Debug.Log($"Wand spawn concerned about null of either {shootingref}, {wandShootPoint}");
         shootingref.bulletSpawnPoint = wandShootPoint.transform;
+        shootingref.wand = currentWand;
     }
 
     private void Update()
@@ -170,12 +186,12 @@ public class RigidBodyMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionStay()
+    private void OnCollisionStay()
     {
         isGrounded = true;
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         // If you want to despawn on collision with another object, you can handle it here
         if (collision.gameObject.tag == "EnemyBullet")
@@ -184,7 +200,7 @@ public class RigidBodyMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (PauseControl.Instance.IsPaused(0))
         {
@@ -199,7 +215,10 @@ public class RigidBodyMovement : MonoBehaviour
     public void TakeDamage()
     {
         hp--;
-        healthbar.UpdateHealth(hp, 15.0f);
+        healthbar.UpdateHealth(hp, maxHealth);
+
+        sounds.PlaySound(prefix + hitSounds[Random.Range(0, 2)]);
+
         if (hp <= 0)
         {
             LoseGame();

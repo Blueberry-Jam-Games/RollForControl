@@ -82,6 +82,7 @@ public class FlowManager : MonoBehaviour
     {
         gameplayLootboxes = gameplayGachas;
         HandleNextGameFlow();
+        SoundManager.Instance.PlaySound("gameplaywin");
         // TODO gameplay gachas
     }
 

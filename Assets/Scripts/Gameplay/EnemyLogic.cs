@@ -17,6 +17,11 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     private Animator characterAnimator;
 
+    [SerializeField]
+    private CharacterSoundContainer sounds;
+
+    private string[] hitsounds = {"hit1", "hit2"};
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,12 +70,23 @@ public class EnemyLogic : MonoBehaviour
         {
             hp--;
             hpBar.UpdateHealth(hp, 3.0f);
+            if (hp > 0)
+            {
+                sounds.PlaySound(hitsounds[Random.Range(0, 2)]);
+            }
         }
         if (hp <= 0)
         {
-            Destroy(gameObject);
             LootboxDrop();
+            sounds.PlaySound("die" + Random.Range(0, 10).ToString());
+            StartCoroutine(DestroyLater());
         }
+    }
+
+    private IEnumerator DestroyLater()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 
     private void LootboxDrop()
