@@ -272,8 +272,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a2f65ccf79893b4ab2d3ae7d104e129, type: 2}
   - {fileID: 11400000, guid: 9d2f1daa802fbb44e959268cd9fe5d82, type: 2}
   - {fileID: 11400000, guid: eaa6d41268433074cb8f804e8154e842, type: 2}
-  - {fileID: 11400000, guid: 8580b9372b491c848b463ac9955ee12c, type: 2}
-  dropChance: 0.5
 --- !u!114 &616142980066148810
 MonoBehaviour:
   m_ObjectHideFlags: 0

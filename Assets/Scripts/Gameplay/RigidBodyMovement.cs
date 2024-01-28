@@ -242,10 +242,16 @@ public class RigidBodyMovement : MonoBehaviour
         }
     }
 
+    private bool died = false;
+
     void LoseGame()
     {
-        Debug.Log("Dead Inside! Just like the devs :D");
-        FlowManager.Instance.GameplayLose();
+        if (!died)
+        {
+            Debug.Log("Dead Inside! Just like the devs :D");
+            FlowManager.Instance.GameplayLose();
+            died = true;    
+        }
     }
 
     private bool jumping = false;
