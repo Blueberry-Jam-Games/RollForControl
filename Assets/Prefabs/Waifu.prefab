@@ -133,7 +133,7 @@ MonoBehaviour:
     type: 3}
   bulletSpawnPoint: {fileID: 3001355716789147608}
   bulletSpeed: 10
-  cooldown: 0.25
+  cooldown: 0.5
   timer: 0
   wand: 0
   character: 0

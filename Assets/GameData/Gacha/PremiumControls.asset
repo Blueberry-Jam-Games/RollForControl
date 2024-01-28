@@ -31,4 +31,4 @@ MonoBehaviour:
   - name: Shoot Button
     image: {fileID: 21300000, guid: b515ae42c6abfac4e9c085614dc3b33c, type: 3}
     percentage: 0
-  LootBoxName: Controls Deulxe
+  LootBoxName: Controls Deluxe

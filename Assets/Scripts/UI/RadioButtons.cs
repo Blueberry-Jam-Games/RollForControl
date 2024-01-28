@@ -7,7 +7,7 @@ public class RadioButtons : MonoBehaviour
 {
     private List<Toggle> controlled;
 
-    private void Start()
+    private void Awake()
     {
         controlled = new List<Toggle>();
 
@@ -44,5 +44,22 @@ public class RadioButtons : MonoBehaviour
         }
 
         controlled[toSelect].isOn = true;
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(FrameAfterEnable());
+    }
+
+    private IEnumerator FrameAfterEnable()
+    {
+        yield return null;
+        foreach (Toggle t in controlled)
+        {
+            if (t.gameObject.TryGetComponent<PermissionBound>(out PermissionBound pb))
+            {
+                pb.RespondToPermissions();
+            }
+        }
     }
 }
