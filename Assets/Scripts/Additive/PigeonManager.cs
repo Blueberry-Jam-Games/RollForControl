@@ -90,5 +90,7 @@ public class PigeonManager : MonoBehaviour
             replyPool[i].gameObject.SetActive(true);
             yield return new WaitForSeconds(replyPool[i].Durration / 2);
         }
+
+        yield return new WaitForSeconds(0.25f);
     }
 }
